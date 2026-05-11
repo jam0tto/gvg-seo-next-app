@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 
 interface ContactFormProps {
-  country: string
+  country?: string
 }
 
 export function ContactForm({ country }: ContactFormProps) {
@@ -30,7 +30,7 @@ export function ContactForm({ country }: ContactFormProps) {
       <div className="rounded-lg border border-accent/20 bg-accent/5 p-8 text-center">
         <h3 className="text-xl font-semibold text-foreground">Thank You!</h3>
         <p className="mt-2 text-muted-foreground">
-          We have received your inquiry. Our {country} team will contact you within 24-48 hours.
+          We have received your inquiry. Our team will contact you within 24-48 hours.
         </p>
       </div>
     )
@@ -110,7 +110,7 @@ export function ContactForm({ country }: ContactFormProps) {
           />
         </Field>
 
-        <input type="hidden" name="country" value={country} />
+        {country && <input type="hidden" name="country" value={country} />}
       </FieldGroup>
 
       <Button type="submit" className="w-full" disabled={isSubmitting}>

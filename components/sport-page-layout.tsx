@@ -259,7 +259,7 @@ export function SportPageLayout({
                   </div>
                 </div>
               </div>
-              <ContactForm source={`${slug}-sport-page`} />
+              <ContactForm />
             </div>
           </div>
         </section>
