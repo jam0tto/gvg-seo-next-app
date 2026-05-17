@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const africanCountries = [
   { label: "Nigeria", href: "/countries/nigeria" },
@@ -14,26 +15,26 @@ const asianCountries = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-muted/50">
+    <footer className="border-t border-slate-700 bg-slate-900">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-4">
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-xl font-bold text-primary">GVG</span>
+            <Link href="/">
+              <Image src="/GVG_logo.png" alt="Guimond Vukovic Group" width={80} height={48} className="h-12 w-auto" />
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground">
+            <p className="mt-4 text-sm text-slate-400">
               Guimond Vukovic Group is a trusted international education consulting firm helping students achieve their dreams of studying abroad.
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-foreground">African Countries</h3>
+            <h3 className="mb-4 text-sm font-semibold text-white">African Countries</h3>
             <ul className="space-y-2">
               {africanCountries.map((country) => (
                 <li key={country.href}>
                   <Link
                     href={country.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
                   >
                     {country.label}
                   </Link>
@@ -43,13 +44,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-foreground">Asian Countries</h3>
+            <h3 className="mb-4 text-sm font-semibold text-white">Asian Countries</h3>
             <ul className="space-y-2">
               {asianCountries.map((country) => (
                 <li key={country.href}>
                   <Link
                     href={country.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
                   >
                     {country.label}
                   </Link>
@@ -59,15 +60,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-foreground">Contact</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="mb-4 text-sm font-semibold text-white">Contact</h3>
+            <ul className="space-y-2 text-sm text-slate-400">
               <li>
-                <a href="mailto:info@guimondvukovicgroup.com" className="transition-colors hover:text-primary">
+                <a href="mailto:info@guimondvukovicgroup.com" className="transition-colors hover:text-white">
                   info@guimondvukovicgroup.com
                 </a>
               </li>
               <li>
-                <Link href="/contact" className="transition-colors hover:text-primary">
+                <Link href="/contact" className="transition-colors hover:text-white">
                   Contact Form
                 </Link>
               </li>
@@ -75,8 +76,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border pt-8">
-          <p className="text-center text-xs text-muted-foreground">
+        <div className="mt-12 border-t border-slate-700 pt-8">
+          <p className="text-center text-xs text-slate-500">
             {new Date().getFullYear()} Guimond Vukovic Group. All rights reserved. | Official UCAS Registered Centre
           </p>
         </div>
