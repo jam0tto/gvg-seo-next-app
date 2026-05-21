@@ -93,6 +93,19 @@ export default function NewsPage() {
         </div>
       </section>
 
+      {/* Countries */}
+      <section className="border-b bg-secondary/30 py-6">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
+          <p className="text-sm text-muted-foreground">
+            We currently work with students &amp; athletes from the{" "}
+            <span className="font-medium text-foreground">
+              USA, Canada, Brazil, Greece, Cyprus, Bulgaria, Croatia, France, Ireland, Sweden, Israel, Montenegro, Serbia, Slovakia,
+            </span>{" "}
+            and the <span className="font-medium text-foreground">U.K.</span>
+          </p>
+        </div>
+      </section>
+
       {/* Annual Player Review */}
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -145,6 +158,21 @@ export default function NewsPage() {
         </div>
       </section>
 
+      {/* CTA */}
+      <section className="bg-primary py-20 text-primary-foreground">
+        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl font-bold md:text-4xl">What&apos;s your story?</h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg opacity-90">Share your athletic background and academic goals with us — our services are completely free.</p>
+          <div className="mt-8">
+            <a
+              href="/contact"
+              className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-white/90"
+            >
+              Share Your Story With Us
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }

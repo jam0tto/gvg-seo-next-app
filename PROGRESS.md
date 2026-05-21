@@ -16,7 +16,7 @@ This file tracks what has been built and what remains, with enough context to co
 - **Primary color:** Indigo 700 — `oklch(0.457 0.240 277.023)` (set in `app/globals.css` as `--primary`)
 - **Accent color:** Indigo 600 — `oklch(0.511 0.262 276.97)` (set as `--accent`)
 - **Dark mode primary:** Indigo 400 — `oklch(0.639 0.216 274.07)`
-- **Logo:** `public/GVG_logo.png` — gold globe + "GUIMOND VUKOVIC GROUP" white text on transparent background
+- **Logo:** `public/GVG_logo.png` — gold globe + "GUIMOND VUKOVIC GROUP" white text on transparent background — actual dimensions 481×162px
 - **Header/Footer background:** `bg-slate-900` (dark navy) — required because logo is gold/white on transparent
 
 ---
@@ -31,8 +31,9 @@ This file tracks what has been built and what remains, with enough context to co
 - **Contact form:** `components/contact-form.tsx` — used by country pages, `country` prop optional
 - **Athlete contact form:** `components/athlete-contact-form.tsx` — full sport-focused form (Graduation Year, Sport, Major+GPA, Timezone, Phone, Comment) used by `/contact` and `/play-overseas-information`
 - **Hub inquiry forms:** `app/african-students/inquiry-form.tsx` and `app/asian-students/inquiry-form.tsx` — simple "use client" forms (Name, Email, Country, Message) co-located with their pages
+- **API route:** `app/api/contact/route.ts` — handles all form submissions via Resend SDK
 - **Internal routing:** All nav links use Next.js `Link`. Only external link in nav is "Sign Up Free" → `https://recruit.guimondvukovicgroup.com`
-- **Hero images:** All present — `/public/images/sports/*.jpg` (24 files) and `/public/images/hero-{country}.jpg` (6 files)
+- **Hero images:** All present — `public/images/sports/*.jpg` (24 files) and `public/images/hero-{country}.jpg` (6 files)
 
 ---
 
@@ -40,10 +41,11 @@ This file tracks what has been built and what remains, with enough context to co
 
 | Route | File | Notes |
 |---|---|---|
-| `/` | `app/page.tsx` | Hero, stats, mission, why-us, partners, regional hubs, CTA |
+| `/` | `app/page.tsx` | Hero, stats, mission (with founder headshots), why-us, partner logo grid, regional hubs, CTA |
+| `/news` | `app/news/page.tsx` | Stats, countries served, annual player review, testimonials, CTA |
 | `/contact` | `app/contact/page.tsx` | Full athlete form, info panel with next-steps |
 | `/faq` | `app/faq/page.tsx` | 12 Q&A pairs, native details/summary accordion |
-| `/play-overseas-information` | `app/play-overseas-information/page.tsx` | Value prop, cost breakdown, founders, athlete form |
+| `/play-overseas-information` | `app/play-overseas-information/page.tsx` | Value prop, cost breakdown, founders with headshot photos, athlete form |
 | `/african-students` | `app/african-students/page.tsx` | Hub → Nigeria/Kenya/Zambia, inquiry form |
 | `/asian-students` | `app/asian-students/page.tsx` | Hub → India/Pakistan/Nepal, inquiry form |
 | `/recruitment` | `app/recruitment/page.tsx` | B2B page for university coaches, mailto CTA |
@@ -103,25 +105,26 @@ All forms POST to `app/api/contact/route.ts` via the Resend SDK. API key is in `
 
 ### 2. Footer links ✓ DONE
 
-Added "Company" column to footer with links to `/play-overseas-information`, `/recruitment`, `/undergraduate-studies`, `/faq`. Privacy Policy link added to copyright bar.
+"Company" column in footer links to `/play-overseas-information`, `/recruitment`, `/undergraduate-studies`, `/faq`, `/news`. Privacy Policy link in copyright bar.
 
 ---
 
 ### 3. Sitemap ✓ DONE
 
-`app/sitemap.ts` created. Covers all 9 static routes, 6 country pages, and 24 sport pages with appropriate priorities.
+`app/sitemap.ts` covers all static routes (including `/news`), 6 country pages, and 24 sport pages.
 
 ---
 
-### 4. Images — source remaining assets from Weebly site ⚠️
+### 4. Images ✓ DONE
 
-Sport hero images (24) and country hero images (6) are already present. The following still need to be sourced from https://www.guimondvukovicgroup.com and added to `public/`:
+All images present in `public/images/`:
+- 24 sport hero images (`sports/*.jpg`)
+- 6 country hero images (`hero-{country}.jpg`)
+- Founder headshots: `derek_headshot.png` (322×483), `vlad_headshot.jpg` (325×309)
+- Partner university logos (11): Essex, UWE, UEL, Bournemouth, ARU, DMU, Loughborough, Nottingham Trent, Derby, Hartpury, Newcastle
+- Partner org logos (6): Tomasik, NCAA, U Sports, NAIA, BUCS, UCAS
 
-- **Founder photos** — headshots of Derek Guimond and Vlad Vukovic (used on `/play-overseas-information`)
-- **University/partner logos** — logos for all 12 partner universities and organisations listed in the Partners section (University of Essex, UWE, UEL, Bournemouth, Anglia Ruskin, De Montfort, Loughborough, Nottingham Trent, Tomasik Agency, NCAA, NAIA, BUCS)
-- **General page hero/section images** — any photos used on the home page, `/african-students`, `/asian-students`, `/recruitment`, `/undergraduate-studies`, and `/faq` that aren't already covered above
-
-**Process:** Use browser dev tools (Network tab → filter Img) on each Weebly page to find and download the originals at full resolution. Save to `public/images/` with descriptive filenames and update the relevant page components to reference them.
+**Still needed:** Any hero/section images for `/african-students`, `/asian-students`, `/recruitment`, `/undergraduate-studies`, `/faq` — check Weebly source pages via browser dev tools Network tab.
 
 ---
 
@@ -134,15 +137,18 @@ Check what Google Tag Manager, Google Analytics, and Google Search Console confi
 
 ---
 
-### 5. Intentionally skipped
+### 6. Deferred
 
-- **Blog/News pages** — content is from 2020–2022, not worth recreating unless actively maintained.
+- **Blog article full content** — `/news` page exists. The 3 Weebly blog posts have not been built as full article pages. Summaries if needed later:
+  - **Working in the U.K. Post-Grad** (`/blog/working-in-the-uk-post-grad` on Weebly) — UK Government initiative allowing international students to remain for two years post-degree.
+  - **U.K. Ready to Play!** (`/blog/uk-ready-to-play` on Weebly) — BUCS statement on resumption of university athletics.
+  - **National League Competitions** (`/blog/national-league-competitions` on Weebly) — Volleyball England announcement on competition resumption.
 
 ---
 
 ## Navigation (header)
 
-Current nav (8 items + CTA button):
+Current nav (8 items + CTA button) — News is in the footer but NOT in the header nav:
 - Home → `/`
 - Play Overseas → `/play-overseas-information`
 - African Students → `/african-students`
@@ -157,24 +163,20 @@ Current nav (8 items + CTA button):
 
 ## Partner Universities & Organizations
 
-- University of Essex
-- University of West England (UWE)
-- University of East London (UEL)
-- Bournemouth University
-- Anglia Ruskin University
-- De Montfort University
-- Loughborough University
-- Nottingham Trent University
-- Tomasik Agency
-- NCAA
-- NAIA
-- British Universities & Colleges Sport (BUCS)
+**Universities (11):** University of Essex, University of West England (UWE), University of East London (UEL), Bournemouth University, Anglia Ruskin University, De Montfort University, Loughborough University, Nottingham Trent University, University of Derby, Hartpury University, Newcastle University
+
+**Organizations (6):** Tomasik Agency, NCAA, U Sports, NAIA, British Universities & Colleges Sport (BUCS), UCAS
+
+Logo files: `public/images/` — see `app/page.tsx` `universityPartners` and `orgPartners` arrays for exact filenames.
 
 ---
 
 ## Key Decisions Made
 
-- **Blog and News pages skipped** — content is from 2020–2022, very stale.
+- **News page built** at `/news` — stats, countries served, annual player review (Tara Ziegelbein, Neysha Gonzalez, Tim Howell & Austin Butler), 5 testimonials, CTA. Blog article content deferred.
+- **Partner section** on home page uses actual logo images in a split grid (universities / organizations), not text pills. Loughborough logo has `scale-150` applied due to excess whitespace in the image file.
+- **Founder headshots** on home page (circular crop) and `/play-overseas-information` (full card photo, h-64, object-cover object-top).
+- **Logo dimensions** corrected to actual 481×162 in both header and footer — was incorrectly set to 80×48 causing blur.
 - **Asian students URL** simplified from `/indian-pakistani-and-se-asian-students` to `/asian-students`.
 - **Header/Footer in root layout** — not in SportPageLayout or CountryPageLayout.
 - **Sports pages** exist on the new app but not the Weebly site — new SEO pages.
