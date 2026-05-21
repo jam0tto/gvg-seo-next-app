@@ -13,11 +13,18 @@ const asianCountries = [
   { label: "Pakistan", href: "/countries/pakistan" },
 ]
 
+const companyLinks = [
+  { label: "Play Overseas", href: "/play-overseas-information" },
+  { label: "Recruitment", href: "/recruitment" },
+  { label: "Undergraduate Studies", href: "/undergraduate-studies" },
+  { label: "FAQ", href: "/faq" },
+]
+
 export function Footer() {
   return (
     <footer className="border-t border-slate-700 bg-slate-900">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-1">
             <Link href="/">
               <Image src="/GVG_logo.png" alt="Guimond Vukovic Group" width={80} height={48} className="h-12 w-auto" />
@@ -60,6 +67,22 @@ export function Footer() {
           </div>
 
           <div>
+            <h3 className="mb-4 text-sm font-semibold text-white">Company</h3>
+            <ul className="space-y-2">
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
             <h3 className="mb-4 text-sm font-semibold text-white">Contact</h3>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
@@ -78,7 +101,10 @@ export function Footer() {
 
         <div className="mt-12 border-t border-slate-700 pt-8">
           <p className="text-center text-xs text-slate-500">
-            {new Date().getFullYear()} Guimond Vukovic Group. All rights reserved. | Official UCAS Registered Centre
+            {new Date().getFullYear()} Guimond Vukovic Group. All rights reserved. | Official UCAS Registered Centre |{" "}
+            <Link href="/privacy-policy" className="underline hover:text-slate-300">
+              Privacy Policy
+            </Link>
           </p>
         </div>
       </div>

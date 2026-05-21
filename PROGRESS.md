@@ -16,8 +16,8 @@ This file tracks what has been built and what remains, with enough context to co
 - **Primary color:** Indigo 700 — `oklch(0.457 0.240 277.023)` (set in `app/globals.css` as `--primary`)
 - **Accent color:** Indigo 600 — `oklch(0.511 0.262 276.97)` (set as `--accent`)
 - **Dark mode primary:** Indigo 400 — `oklch(0.639 0.216 274.07)`
-- **Logo:** Text only — "GVG" bold in `text-primary`, "Guimond Vukovic Group" in `text-muted-foreground`
-- **No logo image file exists** — text-only in header and footer
+- **Logo:** `public/GVG_logo.png` — gold globe + "GUIMOND VUKOVIC GROUP" white text on transparent background
+- **Header/Footer background:** `bg-slate-900` (dark navy) — required because logo is gold/white on transparent
 
 ---
 
@@ -26,226 +26,121 @@ This file tracks what has been built and what remains, with enough context to co
 - **Framework:** Next.js 16.2.4, App Router, TypeScript, Tailwind CSS v4, shadcn/ui (radix-nova style)
 - **Header/Footer:** Live in root layout (`app/layout.tsx`) — do NOT add them inside page components
 - **Shared layout components:**
-  - `components/sport-page-layout.tsx` — used by all 25 sports pages
+  - `components/sport-page-layout.tsx` — used by all 24 sports pages
   - `components/country-page-layout.tsx` — used by all 6 country pages
-- **Contact form:** `components/contact-form.tsx` — `country` prop is optional
-- **Internal routing:** All nav links use Next.js `Link`. The only external link in nav is the "Sign Up Free" button → `https://recruit.guimondvukovicgroup.com`
+- **Contact form:** `components/contact-form.tsx` — used by country pages, `country` prop optional
+- **Athlete contact form:** `components/athlete-contact-form.tsx` — full sport-focused form (Graduation Year, Sport, Major+GPA, Timezone, Phone, Comment) used by `/contact` and `/play-overseas-information`
+- **Hub inquiry forms:** `app/african-students/inquiry-form.tsx` and `app/asian-students/inquiry-form.tsx` — simple "use client" forms (Name, Email, Country, Message) co-located with their pages
+- **Internal routing:** All nav links use Next.js `Link`. Only external link in nav is "Sign Up Free" → `https://recruit.guimondvukovicgroup.com`
+- **Hero images:** All present — `/public/images/sports/*.jpg` (24 files) and `/public/images/hero-{country}.jpg` (6 files)
 
 ---
 
-## Pages: Built ✓
+## Pages: Built ✓ (all complete)
 
-| Route | Notes |
-|---|---|
-| `/` | Home page — hero, stats, mission, why-us, partners, regional hubs, CTA |
-| `/countries/nigeria` | CountryPageLayout |
-| `/countries/kenya` | CountryPageLayout |
-| `/countries/zambia` | CountryPageLayout |
-| `/countries/india` | CountryPageLayout |
-| `/countries/nepal` | CountryPageLayout |
-| `/countries/pakistan` | CountryPageLayout |
-| `/sports/basketball` | SportPageLayout |
-| `/sports/volleyball` | SportPageLayout |
-| `/sports/soccer` | SportPageLayout |
-| `/sports/american-football` | SportPageLayout |
-| `/sports/rugby` | SportPageLayout |
-| `/sports/lacrosse` | SportPageLayout |
-| `/sports/water-polo` | SportPageLayout |
-| `/sports/field-hockey` | SportPageLayout |
-| `/sports/ice-hockey` | SportPageLayout |
-| `/sports/netball` | SportPageLayout |
-| `/sports/beach-volleyball` | SportPageLayout |
-| `/sports/tennis` | SportPageLayout |
-| `/sports/swimming` | SportPageLayout |
-| `/sports/diving` | SportPageLayout |
-| `/sports/track-and-field` | SportPageLayout |
-| `/sports/cross-country` | SportPageLayout |
-| `/sports/golf` | SportPageLayout |
-| `/sports/squash` | SportPageLayout |
-| `/sports/badminton` | SportPageLayout |
-| `/sports/martial-arts` | SportPageLayout |
-| `/sports/judo` | SportPageLayout |
-| `/sports/taekwondo` | SportPageLayout |
-| `/sports/cheer` | SportPageLayout |
-| `/sports/ultimate` | SportPageLayout |
-
----
-
-## Pages: To Build
-
-Ordered by priority. Content below is sourced from the Weebly site — use it directly rather than re-crawling.
-
----
-
-### 1. `/contact`
-
-**Weebly URL:** `/contact.html`
-
-Form fields (required unless noted):
-- First Name, Last Name
-- Email
-- Graduation Year
-- Sport
-- Major and GPA
-- Current Time Zone
-- Phone Number
-- Comment (textarea)
-
-No physical address or phone on the page. Encourage checking spam folder.
-CTA text: "SIGN UP NOW FOR FREE"  
-Note at bottom: check spam if no reply within a few days.
+| Route | File | Notes |
+|---|---|---|
+| `/` | `app/page.tsx` | Hero, stats, mission, why-us, partners, regional hubs, CTA |
+| `/contact` | `app/contact/page.tsx` | Full athlete form, info panel with next-steps |
+| `/faq` | `app/faq/page.tsx` | 12 Q&A pairs, native details/summary accordion |
+| `/play-overseas-information` | `app/play-overseas-information/page.tsx` | Value prop, cost breakdown, founders, athlete form |
+| `/african-students` | `app/african-students/page.tsx` | Hub → Nigeria/Kenya/Zambia, inquiry form |
+| `/asian-students` | `app/asian-students/page.tsx` | Hub → India/Pakistan/Nepal, inquiry form |
+| `/recruitment` | `app/recruitment/page.tsx` | B2B page for university coaches, mailto CTA |
+| `/undergraduate-studies` | `app/undergraduate-studies/page.tsx` | UCAS support page, 7 services, signup CTA |
+| `/privacy-policy` | `app/privacy-policy/page.tsx` | Prose layout, last updated July 30 2020 |
+| `/countries/nigeria` | `app/countries/nigeria/page.tsx` | CountryPageLayout |
+| `/countries/kenya` | `app/countries/kenya/page.tsx` | CountryPageLayout |
+| `/countries/zambia` | `app/countries/zambia/page.tsx` | CountryPageLayout |
+| `/countries/india` | `app/countries/india/page.tsx` | CountryPageLayout |
+| `/countries/nepal` | `app/countries/nepal/page.tsx` | CountryPageLayout |
+| `/countries/pakistan` | `app/countries/pakistan/page.tsx` | CountryPageLayout |
+| `/sports/basketball` | `app/sports/basketball/page.tsx` | SportPageLayout |
+| `/sports/volleyball` | `app/sports/volleyball/page.tsx` | SportPageLayout |
+| `/sports/soccer` | `app/sports/soccer/page.tsx` | SportPageLayout |
+| `/sports/american-football` | `app/sports/american-football/page.tsx` | SportPageLayout |
+| `/sports/rugby` | `app/sports/rugby/page.tsx` | SportPageLayout |
+| `/sports/lacrosse` | `app/sports/lacrosse/page.tsx` | SportPageLayout |
+| `/sports/water-polo` | `app/sports/water-polo/page.tsx` | SportPageLayout |
+| `/sports/field-hockey` | `app/sports/field-hockey/page.tsx` | SportPageLayout |
+| `/sports/ice-hockey` | `app/sports/ice-hockey/page.tsx` | SportPageLayout |
+| `/sports/netball` | `app/sports/netball/page.tsx` | SportPageLayout |
+| `/sports/beach-volleyball` | `app/sports/beach-volleyball/page.tsx` | SportPageLayout |
+| `/sports/tennis` | `app/sports/tennis/page.tsx` | SportPageLayout |
+| `/sports/swimming` | `app/sports/swimming/page.tsx` | SportPageLayout |
+| `/sports/diving` | `app/sports/diving/page.tsx` | SportPageLayout |
+| `/sports/track-and-field` | `app/sports/track-and-field/page.tsx` | SportPageLayout |
+| `/sports/cross-country` | `app/sports/cross-country/page.tsx` | SportPageLayout |
+| `/sports/golf` | `app/sports/golf/page.tsx` | SportPageLayout |
+| `/sports/squash` | `app/sports/squash/page.tsx` | SportPageLayout |
+| `/sports/badminton` | `app/sports/badminton/page.tsx` | SportPageLayout |
+| `/sports/martial-arts` | `app/sports/martial-arts/page.tsx` | SportPageLayout |
+| `/sports/judo` | `app/sports/judo/page.tsx` | SportPageLayout |
+| `/sports/taekwondo` | `app/sports/taekwondo/page.tsx` | SportPageLayout |
+| `/sports/cheer` | `app/sports/cheer/page.tsx` | SportPageLayout |
+| `/sports/ultimate` | `app/sports/ultimate/page.tsx` | SportPageLayout |
 
 ---
 
-### 2. `/faq`
+## Remaining Work (priority order)
 
-**Weebly URL:** `/faq.html`
+### 1. Form backend ⚠️ (nothing sends email yet)
 
-12 Q&A pairs:
+All three form components simulate submission with a `setTimeout` mock — no data goes anywhere.
 
-1. **Can I apply with a friend?** — "Absolutely, we encourage it."
-2. **Can I apply with lower grades?** — Need a 2.5 GPA or above. A Master's can improve employability.
-3. **Professional career vs. postgraduate study?** — UK study helps develop your game, get more video, make connections.
-4. **Does Guimond Vukovic charge fees?** — "No, our services are absolutely free of charge!" Universities pay them.
-5. **How long does a Master's take?** — Normally 12 months.
-6. **What playing level is required?** — NCAA D1, D2, D3 and NAIA athletes have all been placed.
-7. **Financing options?** — Universities offer academic and athletic scholarships. Full rides are rare; partial scholarships are available.
-8. **Can I apply after graduation?** — Yes, for career restart or additional credentials.
-9. **Work permissions?** — Masters students can work up to 20 hours/week.
-10. **Undergraduate applicants?** — Contact for individual assessment; they do assist undergrads.
-11. **Study options?** — Many fields beyond business, psychology, or humanities.
-12. **Supported sports?** — Basketball, baseball, soccer, rowing, swimming, and 10+ others.
+**Forms that need wiring:**
+- `components/athlete-contact-form.tsx` (used by `/contact` and `/play-overseas-information`)
+- `components/contact-form.tsx` (used by all 6 country pages)
+- `app/african-students/inquiry-form.tsx`
+- `app/asian-students/inquiry-form.tsx`
+
+**Recommended approach:** Next.js API route at `app/api/contact/route.ts` + [Resend](https://resend.com) SDK (free tier, easy setup). Each form's `handleSubmit` should POST to this endpoint. The recruitment page uses a direct `mailto:` link — that's fine as-is.
 
 ---
 
-### 3. `/play-overseas-information`
+### 2. Footer links ✓ DONE
 
-**Weebly URL:** `/play-overseas-information.html`
-
-Sections:
-- **Value prop:** NCAA/NAIA athletes can earn a Master's in the UK with no eligibility restrictions; scholarship opportunities available.
-- **The Founders** (Derek Guimond + Vladimir Vukovic bios — brief)
-- **Basic costs:**
-  - Master's tuition: £10,500–£22,500
-  - Total 1-year cost: £15,675–£21,275
-  - Accommodation: ~£5,500
-  - Healthcare surcharge: £225
-  - Student visa: ~£300
-- **USA comparison:** US Master's typically costs $50,000/yr; UK is ~50% more affordable
-- **CTA:** "GET YOUR FREE CONSULTATION TODAY" / "SIGN UP NOW FOR FREE"
-- Contact form at bottom: "Tell us about yourself" (same fields as contact page)
+Added "Company" column to footer with links to `/play-overseas-information`, `/recruitment`, `/undergraduate-studies`, `/faq`. Privacy Policy link added to copyright bar.
 
 ---
 
-### 4. `/african-students`
+### 3. Sitemap ✓ DONE
 
-**Weebly URL:** `/african-students.html`
-
-Hub page linking to Nigeria, Kenya, Zambia country pages.
-
-Content:
-- "If you are a prospective student from Africa please send us an enquiry below and we will be in touch regarding opportunities to study in the U.K."
-- We typically secure scholarships providing 20–40% reductions in tuition costs.
-- Local recruiters in Kenya, Nigeria, and Zambia; applications welcome from across Africa.
-- Services are free.
-
-Sub-pages: Nigeria, Kenya, Zambia (already built at `/countries/*`)
-Simple contact/inquiry form (name, email, comment).
+`app/sitemap.ts` created. Covers all 9 static routes, 6 country pages, and 24 sport pages with appropriate priorities.
 
 ---
 
-### 5. `/asian-students`
+### 4. GTM / GA / GSC (Analytics & Search Console)
 
-**Weebly URL:** `/indian-pakistani-and-se-asian-students.html`
-
-Hub page linking to India, Pakistan, Nepal country pages.
-
-Content:
-- "If you are a prospective student from India, Pakistan, or Asia please send us an enquiry below and we will be in touch regarding opportunities to study in the U.K."
-- Scholarships around 20–40% off tuition; services are totally free.
-
-Sub-pages: India, Pakistan, Nepal (already built at `/countries/*`)
-Simple contact/inquiry form (name, email, comment).
+Check what Google Tag Manager, Google Analytics, and Google Search Console configuration exists on the Weebly site and reproduce in the Next.js app:
+- Inspect Weebly site source HTML for GTM container IDs, GA measurement IDs, or GSC verification meta tags
+- Add tracking scripts to `app/layout.tsx` using the Next.js `Script` component
+- Add GSC domain verification meta tag to root layout metadata if needed
 
 ---
 
-### 6. `/recruitment`
+### 5. Intentionally skipped
 
-**Weebly URL:** `/recruitment.html`
-
-Audience: university coaches and recruiters (B2B page).
-
-Content:
-- Headline: "Recruit with GVG" / "Choose the right Student-Athletes for Your University"
-- GVG connects vetted student-athletes with universities — emphasizes "grit, motivation, and work ethic"
-- Materials athletes submit: sporting and academic resumes, video highlights, recommendation letters
-- GVG represents NCAA and NAIA athletes from USA and Canada
-- Guides athletes through advisory, visa, and postgraduate stages
-- Contact email: [email protected]
-
----
-
-### 7. `/undergraduate-studies`
-
-**Weebly URL:** `/undergraduate-studies.html`
-
-Content:
-- **Core offering:** Support for international students applying to UK undergraduate programs via UCAS
-- **7 services:**
-  1. UCAS application support with personal statement assistance
-  2. Course and university selection guidance
-  3. Personal statement coaching
-  4. Document review and submission oversight
-  5. Application tracking
-  6. Visa and immigration assistance
-  7. Pre-departure and orientation support
-- **Value props:** Expert UCAS knowledge, personalized service, dedicated support, global experience
-- **Getting started:** Free consultation → guided application → acceptance and visa support
-- **What is UCAS?** — brief explainer section
-- **FAQ section** — not specified in source; can reuse relevant FAQ items
-- CTA: "Sign up for a FREE CONSULTATION"
-
----
-
-### 8. `/privacy-policy` *(low priority)*
-
-**Weebly URL:** `/privacy-policy.html`
-
-Last updated: July 30, 2020.
-
-Key points:
-- Collects: name, email, phone, academic transcripts, personal ID, sports videos
-- Data sourced from: users directly, and indirectly from coaches/teachers/parents
-- Used for: processing applications, account management, promotional offers, negotiating professional deals
-- Shared with: universities and professional teams (with user consent)
-- Stored via: AWS and Google G Suite
-- Retention: throughout engagement period, then deleted
-- User rights: access, correct, erase, restrict, object, portability (1-month response time)
-- Cookies: functionality and advertising cookies used
-- Marketing opt-out available via unsubscribe or email
+- **Blog/News pages** — content is from 2020–2022, not worth recreating unless actively maintained.
 
 ---
 
 ## Navigation (header)
 
-Current nav items in `components/header.tsx`:
+Current nav (8 items + CTA button):
 - Home → `/`
 - Play Overseas → `/play-overseas-information`
 - African Students → `/african-students`
 - Asian Students → `/asian-students`
+- Undergraduate → `/undergraduate-studies`
+- Recruitment → `/recruitment`
 - FAQ → `/faq`
 - Contact → `/contact`
-- Sign Up Free button → `https://recruit.guimondvukovicgroup.com` (external, opens new tab)
-
-Nav items NOT currently in header (could add after pages are built):
-- Recruitment → `/recruitment`
-- Undergraduate Studies → `/undergraduate-studies`
+- Sign Up Free (Button) → `https://recruit.guimondvukovicgroup.com` (external, new tab)
 
 ---
 
 ## Partner Universities & Organizations
-
-(Used on home page; reuse wherever relevant)
 
 - University of Essex
 - University of West England (UWE)
@@ -264,8 +159,10 @@ Nav items NOT currently in header (could add after pages are built):
 
 ## Key Decisions Made
 
-- **Blog and News pages skipped** — content is from 2020–2022, very stale, not worth recreating unless actively maintained going forward.
+- **Blog and News pages skipped** — content is from 2020–2022, very stale.
 - **Asian students URL** simplified from `/indian-pakistani-and-se-asian-students` to `/asian-students`.
-- **Header/Footer in root layout** — removed from `SportPageLayout` and `CountryPageLayout`; they now just return `<main>` elements.
-- **Sports pages exist** on the new app but not on the Weebly site — these are new SEO pages, not migrations.
-- **Contact form** (`components/contact-form.tsx`) has `country` as optional prop.
+- **Header/Footer in root layout** — not in SportPageLayout or CountryPageLayout.
+- **Sports pages** exist on the new app but not the Weebly site — new SEO pages.
+- **Header/Footer dark** (`bg-slate-900`) — required for the gold/white logo to be visible.
+- **Athlete form** is a separate component from the country-page contact form — different field sets.
+- **Hub page inquiry forms** co-located as `inquiry-form.tsx` next to their `page.tsx` to keep server components clean for metadata.
