@@ -84,17 +84,20 @@ This file tracks what has been built and what remains, with enough context to co
 
 ## Remaining Work (priority order)
 
-### 1. Form backend ⚠️ (nothing sends email yet)
+### 1. Form backend ✓ DONE
 
-All three form components simulate submission with a `setTimeout` mock — no data goes anywhere.
+All forms POST to `app/api/contact/route.ts` via the Resend SDK. API key is in `.env.local`.
 
-**Forms that need wiring:**
-- `components/athlete-contact-form.tsx` (used by `/contact` and `/play-overseas-information`)
-- `components/contact-form.tsx` (used by all 6 country pages)
-- `app/african-students/inquiry-form.tsx`
-- `app/asian-students/inquiry-form.tsx`
+**Recipient routing (server-side map — client never dictates destination):**
+- Nigeria → Jennifer Olawore `jennifer@guimondvukovicgroup.com`
+- Zambia → Abigail Kaloonje Simpasa `kalonje.abigail@guimondvukovicgroup.com`
+- Kenya → Dennis Nyariki `dennis.nyariki@guimondvukovicgroup.com`
+- Pakistan → Ahmed Virk `ahmedvirk@guimondvukovicgroup.com`
+- India → Mahesh Morampudi `mahesh@guimondvukovicgroup.com`
+- Nepal → Riward Kc `riwardkc@guimondvukovicgroup.com`
+- All other forms (athlete, african-hub, asian-hub) → `derek.guimond@guimondvukovicgroup.com`
 
-**Recommended approach:** Next.js API route at `app/api/contact/route.ts` + [Resend](https://resend.com) SDK (free tier, easy setup). Each form's `handleSubmit` should POST to this endpoint. The recruitment page uses a direct `mailto:` link — that's fine as-is.
+**From:** `noreply@guimondvukovicgroup.com` (domain already verified in Resend on the account that owns this key)
 
 ---
 
