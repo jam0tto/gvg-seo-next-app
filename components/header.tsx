@@ -24,7 +24,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-slate-700 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/90">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/">
-          <Image src="/GVG_logo.png" alt="Guimond Vukovic Group" width={80} height={48} className="h-12 w-auto" priority />
+          <Image src="/GVG_logo.png" alt="Guimond Vukovic Group" width={481} height={162} className="h-12 w-auto" priority />
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
@@ -38,14 +38,6 @@ export function Header() {
             </Link>
           ))}
         </nav>
-
-        <div className="hidden md:flex">
-          <Button asChild size="sm">
-            <a href="https://recruit.guimondvukovicgroup.com" target="_blank" rel="noopener noreferrer">
-              Sign Up Free
-            </a>
-          </Button>
-        </div>
 
         <Button
           variant="ghost"
@@ -71,13 +63,6 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <div className="mt-3 border-t border-slate-700 pt-3">
-              <Button asChild size="sm" className="w-full">
-                <a href="https://recruit.guimondvukovicgroup.com" target="_blank" rel="noopener noreferrer">
-                  Sign Up Free
-                </a>
-              </Button>
-            </div>
           </nav>
         </div>
       )}

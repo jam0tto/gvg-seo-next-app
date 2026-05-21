@@ -18,6 +18,7 @@ const companyLinks = [
   { label: "Recruitment", href: "/recruitment" },
   { label: "Undergraduate Studies", href: "/undergraduate-studies" },
   { label: "FAQ", href: "/faq" },
+  { label: "News", href: "/news" },
 ]
 
 export function Footer() {
@@ -27,7 +28,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-1">
             <Link href="/">
-              <Image src="/GVG_logo.png" alt="Guimond Vukovic Group" width={80} height={48} className="h-12 w-auto" />
+              <Image src="/GVG_logo.png" alt="Guimond Vukovic Group" width={481} height={162} className="h-12 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-slate-400">
               Guimond Vukovic Group is a trusted international education consulting firm helping students achieve their dreams of studying abroad.

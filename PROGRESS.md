@@ -113,7 +113,19 @@ Added "Company" column to footer with links to `/play-overseas-information`, `/r
 
 ---
 
-### 4. GTM / GA / GSC (Analytics & Search Console)
+### 4. Images — source remaining assets from Weebly site ⚠️
+
+Sport hero images (24) and country hero images (6) are already present. The following still need to be sourced from https://www.guimondvukovicgroup.com and added to `public/`:
+
+- **Founder photos** — headshots of Derek Guimond and Vlad Vukovic (used on `/play-overseas-information`)
+- **University/partner logos** — logos for all 12 partner universities and organisations listed in the Partners section (University of Essex, UWE, UEL, Bournemouth, Anglia Ruskin, De Montfort, Loughborough, Nottingham Trent, Tomasik Agency, NCAA, NAIA, BUCS)
+- **General page hero/section images** — any photos used on the home page, `/african-students`, `/asian-students`, `/recruitment`, `/undergraduate-studies`, and `/faq` that aren't already covered above
+
+**Process:** Use browser dev tools (Network tab → filter Img) on each Weebly page to find and download the originals at full resolution. Save to `public/images/` with descriptive filenames and update the relevant page components to reference them.
+
+---
+
+### 5. GTM / GA / GSC (Analytics & Search Console)
 
 Check what Google Tag Manager, Google Analytics, and Google Search Console configuration exists on the Weebly site and reproduce in the Next.js app:
 - Inspect Weebly site source HTML for GTM container IDs, GA measurement IDs, or GSC verification meta tags

@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, Trophy, Plane, Users, CheckCircle, ArrowRight } from "lucide-react"
+import { GraduationCap, Trophy, Plane, CheckCircle, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Guimond Vukovic Group | Play Overseas & Earn Your Master's Degree",
@@ -22,19 +23,27 @@ export const metadata: Metadata = {
   },
 }
 
-const partners = [
-  "University of Essex",
-  "University of West England (UWE)",
-  "University of East London (UEL)",
-  "Bournemouth University",
-  "Anglia Ruskin University",
-  "De Montfort University",
-  "Loughborough University",
-  "Nottingham Trent University",
-  "Tomasik Agency",
-  "NCAA",
-  "NAIA",
-  "British Universities & Colleges Sport (BUCS)",
+const universityPartners = [
+  { name: "University of Essex", logo: "/images/essexpartner_1.png" },
+  { name: "University of West England (UWE)", logo: "/images/uwepartner_2.png" },
+  { name: "University of East London (UEL)", logo: "/images/uel_partner.jpg" },
+  { name: "Bournemouth University", logo: "/images/bupartner.png" },
+  { name: "Anglia Ruskin University", logo: "/images/arupartner.png" },
+  { name: "De Montfort University", logo: "/images/dmu.png" },
+  { name: "Loughborough University", logo: "/images/loughborough.png", scale: "scale-150" },
+  { name: "Nottingham Trent University", logo: "/images/nottingham-trent-university-logo-2.webp" },
+  { name: "University of Derby", logo: "/images/uni_derby_logo.png" },
+  { name: "Hartpury University", logo: "/images/hartpury_university.png" },
+  { name: "Newcastle University", logo: "/images/newcastle_university.png" },
+]
+
+const orgPartners = [
+  { name: "Tomasik Agency", logo: "/images/tomasikparnter.png" },
+  { name: "NCAA", logo: "/images/ncaa-logo-png-seeklogo-221081.png" },
+  { name: "U Sports", logo: "/images/Usports.png" },
+  { name: "NAIA", logo: "/images/naia-fullname-logo-300dpi-rgb.png" },
+  { name: "British Universities & Colleges Sport (BUCS)", logo: "/images/british-universities-colleges-sport-seeklogo.png" },
+  { name: "UCAS", logo: "/images/UCAS_logo.png" },
 ]
 
 export default function HomePage() {
@@ -115,13 +124,13 @@ export default function HomePage() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               {[
-                { name: "Derek Guimond", role: "Co-Founder", detail: "Ex-NCAA athlete & Master's graduate who played professionally overseas" },
-                { name: "Vladimir Vukovic", role: "Co-Founder", detail: "Played professionally overseas and earned his Master's degree in the UK" },
+                { name: "Derek Guimond", role: "Co-Founder", detail: "Ex-NCAA athlete & Master's graduate who played professionally overseas", headshot: "/images/derek_headshot.png" },
+                { name: "Vladimir Vukovic", role: "Co-Founder", detail: "Played professionally overseas and earned his Master's degree in the UK", headshot: "/images/vlad_headshot.jpg" },
               ].map((founder) => (
                 <Card key={founder.name} className="border-border/50">
                   <CardContent className="p-6">
-                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                      <Users className="h-6 w-6 text-primary" />
+                    <div className="mb-3 relative h-12 w-12 overflow-hidden rounded-full">
+                      <Image src={founder.headshot} alt={founder.name} fill className="object-cover object-top" />
                     </div>
                     <p className="font-semibold text-foreground">{founder.name}</p>
                     <p className="text-sm font-medium text-accent">{founder.role}</p>
@@ -185,18 +194,44 @@ export default function HomePage() {
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">Our Network</p>
             <h2 className="mt-3 font-serif text-3xl font-bold text-foreground md:text-4xl">
-              Partner Universities & Organizations
+              Partner Universities &amp; Organizations
             </h2>
           </div>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-            {partners.map((partner) => (
-              <span
-                key={partner}
-                className="rounded-full border border-border bg-card px-5 py-2 text-sm font-medium text-foreground"
-              >
-                {partner}
-              </span>
-            ))}
+
+          <div className="mt-12">
+            <p className="mb-5 text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              Universities
+            </p>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {universityPartners.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="flex items-center justify-center rounded-xl bg-white p-5 shadow-sm"
+                >
+                  <div className="relative h-20 w-full overflow-hidden">
+                    <Image src={partner.logo} alt={partner.name} fill className={`object-contain${partner.scale ? ` ${partner.scale}` : ""}`} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <p className="mb-5 text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              Organizations
+            </p>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+              {orgPartners.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="flex items-center justify-center rounded-xl bg-white p-5 shadow-sm"
+                >
+                  <div className="relative h-20 w-full">
+                    <Image src={partner.logo} alt={partner.name} fill className="object-contain" />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

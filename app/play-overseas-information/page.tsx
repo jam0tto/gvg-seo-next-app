@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, Plane, Users, CheckCircle, ArrowRight, PoundSterling } from "lucide-react"
+import { GraduationCap, Plane, CheckCircle, ArrowRight, PoundSterling } from "lucide-react"
 import { AthleteContactForm } from "@/components/athlete-contact-form"
 
 export const metadata: Metadata = {
@@ -187,18 +188,29 @@ export default function PlayOverseasInformationPage() {
                 name: "Derek Guimond",
                 role: "Co-Founder",
                 detail: "Ex-NCAA athlete & Master's graduate who played professionally overseas",
+                headshot: "/images/derek_headshot.png",
+                width: 322,
+                height: 483,
               },
               {
                 name: "Vladimir Vukovic",
                 role: "Co-Founder",
                 detail: "Played professionally overseas and earned his Master's degree in the UK",
+                headshot: "/images/vlad_headshot.jpg",
+                width: 325,
+                height: 309,
               },
             ].map((founder) => (
-              <Card key={founder.name} className="border-border/50">
+              <Card key={founder.name} className="overflow-hidden border-border/50">
+                <div className="relative h-64 w-full bg-muted">
+                  <Image
+                    src={founder.headshot}
+                    alt={founder.name}
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
                 <CardContent className="p-6">
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <Users className="h-6 w-6 text-primary" />
-                  </div>
                   <p className="font-semibold text-foreground">{founder.name}</p>
                   <p className="text-sm font-medium text-accent">{founder.role}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{founder.detail}</p>
