@@ -41,6 +41,7 @@ This file tracks what has been built and what remains, with enough context to co
 
 | Route | File | Notes |
 |---|---|---|
+| `/sports` | `app/sports/page.tsx` | Index page — hero with program copy, 4-column grid linking all 24 sport pages |
 | `/` | `app/page.tsx` | Hero, stats, mission (with founder headshots), why-us, partner logo grid, regional hubs, CTA |
 | `/news` | `app/news/page.tsx` | Stats, countries served, annual player review, testimonials, CTA |
 | `/contact` | `app/contact/page.tsx` | Full athlete form, info panel with next-steps |
@@ -148,16 +149,13 @@ Check what Google Tag Manager, Google Analytics, and Google Search Console confi
 
 ## Navigation (header)
 
-Current nav (8 items + CTA button) — News is in the footer but NOT in the header nav:
-- Home → `/`
-- Play Overseas → `/play-overseas-information`
-- African Students → `/african-students`
-- Asian Students → `/asian-students`
-- Undergraduate → `/undergraduate-studies`
-- Recruitment → `/recruitment`
-- FAQ → `/faq`
-- Contact → `/contact`
-- Sign Up Free (Button) → `https://recruit.guimondvukovicgroup.com` (external, new tab)
+Hover-dropdown nav (`components/header.tsx`). Mobile uses accordion expand/collapse.
+
+- **Play Overseas** → `/play-overseas-information` (direct link)
+- **African Students** → `/african-students` + dropdown: Nigeria, Kenya, Zambia
+- **Asian Students** → `/asian-students` + dropdown: India, Pakistan, Nepal
+- **Sports** → `/sports` + mega-menu dropdown (4-column grid, all 24 sports)
+- **More** → dropdown only: Undergraduate Studies, Recruitment, FAQ, News, Contact
 
 ---
 
@@ -183,3 +181,6 @@ Logo files: `public/images/` — see `app/page.tsx` `universityPartners` and `or
 - **Header/Footer dark** (`bg-slate-900`) — required for the gold/white logo to be visible.
 - **Athlete form** is a separate component from the country-page contact form — different field sets.
 - **Hub page inquiry forms** co-located as `inquiry-form.tsx` next to their `page.tsx` to keep server components clean for metadata.
+- **Header dropdowns** use CSS `group-hover` (no JS for desktop); `pt-2` transparent bridge prevents the dropdown from closing when moving the mouse from trigger to panel. Sports uses a mega-menu (4 cols, 560px wide) centered under its trigger.
+- **No "Home" link** in header — removed per design decision.
+- **No "Sign Up Free" button** in header — removed per design decision.
