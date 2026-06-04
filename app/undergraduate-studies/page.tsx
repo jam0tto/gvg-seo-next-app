@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   BookOpen,
@@ -74,39 +75,36 @@ const services = [
 export default function UndergraduateStudiesPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-950 to-indigo-700 px-4 py-24 text-white md:py-36 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
-              Undergraduate Studies in the UK
-            </p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl lg:text-6xl">
-              Your Complete Guide to UK Undergraduate Admissions
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty md:text-xl">
-              Applying to a UK university as an international student is a complex process. GVG provides expert UCAS
-              support, personal statement coaching, and end-to-end guidance — completely free.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="https://recruit.guimondvukovicgroup.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-indigo-900 transition-colors hover:bg-indigo-50"
-              >
-                Sign Up for a Free Consultation
-              </a>
-              <a
-                href="#ucas"
-                className="inline-flex items-center rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                Learn About UCAS
-              </a>
-            </div>
+      <PageHero imageSrc="/images/parliament_hero.png" imageAlt="Houses of Parliament and Westminster, London" tall>
+        <div className="max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
+            Undergraduate Studies in the UK
+          </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl lg:text-6xl">
+            Your Complete Guide to UK Undergraduate Admissions
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty md:text-xl">
+            Applying to a UK university as an international student is a complex process. GVG provides expert UCAS
+            support, personal statement coaching, and end-to-end guidance — completely free.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a
+              href="https://recruit.guimondvukovicgroup.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-indigo-900 transition-colors hover:bg-indigo-50"
+            >
+              Sign Up for a Free Consultation
+            </a>
+            <a
+              href="#ucas"
+              className="inline-flex items-center rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Learn About UCAS
+            </a>
           </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* What is UCAS */}
       <section id="ucas" className="py-20">

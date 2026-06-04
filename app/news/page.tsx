@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { Quote } from "lucide-react"
 
@@ -65,16 +66,15 @@ const testimonials = [
 export default function NewsPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-950 to-indigo-800 px-4 py-20 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
+      <PageHero imageSrc="/images/london_bridge_hero.png" imageAlt="London skyline at dusk">
+        <div className="max-w-3xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-indigo-300">GVG Network</p>
           <h1 className="text-4xl font-bold tracking-tight md:text-5xl">News &amp; Reviews</h1>
           <p className="mt-4 max-w-2xl text-lg text-indigo-100">
             Player achievements, athlete testimonials, and the latest updates from the GVG network.
           </p>
         </div>
-      </section>
+      </PageHero>
 
       {/* Stats */}
       <section className="border-b bg-background">

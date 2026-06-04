@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
+import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, Trophy, Plane, CheckCircle, ArrowRight } from "lucide-react"
 
@@ -49,37 +50,34 @@ const orgPartners = [
 export default function HomePage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-950 to-indigo-700 px-4 py-24 text-white md:py-36 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
-              Free Consulting for Student Athletes
-            </p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl lg:text-6xl">
-              Earn Your Master&apos;s Degree and Play Overseas
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty md:text-xl">
-              We provide the knowledge and resources you need as an NCAA, NAIA, USPORTS, or Club Athlete to continue
-              your athletic, academic, and professional careers in the UK.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-indigo-900 transition-colors hover:bg-indigo-50"
-              >
-                Get Free Consultation
-              </Link>
-              <Link
-                href="/play-overseas-information"
-                className="inline-flex items-center rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                How It Works
-              </Link>
-            </div>
+      <PageHero imageSrc="/images/hp_hero.png" imageAlt="Student athletes studying and playing sports in the UK" tall>
+        <div className="max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
+            Free Consulting for Student Athletes
+          </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl lg:text-6xl">
+            Earn Your Master&apos;s Degree and Play Overseas
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty md:text-xl">
+            We provide the knowledge and resources you need as an NCAA, NAIA, USPORTS, or Club Athlete to continue
+            your athletic, academic, and professional careers in the UK.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-indigo-900 transition-colors hover:bg-indigo-50"
+            >
+              Get Free Consultation
+            </Link>
+            <Link
+              href="/play-overseas-information"
+              className="inline-flex items-center rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              How It Works
+            </Link>
           </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* Stats */}
       <section className="border-b bg-background">

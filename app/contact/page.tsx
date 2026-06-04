@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { AthleteContactForm } from "@/components/athlete-contact-form"
 
@@ -11,22 +12,19 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-950 to-indigo-700 px-4 py-24 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-2xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
-              Get In Touch
-            </p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
-              Contact Us
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty">
-              Fill out the form below and we&apos;ll be in touch. Our services are completely free.
-            </p>
-          </div>
+      <PageHero imageSrc="/images/parliament_hero.png" imageAlt="Houses of Parliament and Westminster, London">
+        <div className="max-w-2xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
+            Get In Touch
+          </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
+            Contact Us
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty">
+            Fill out the form below and we&apos;ll be in touch. Our services are completely free.
+          </p>
         </div>
-      </section>
+      </PageHero>
 
       {/* Main content */}
       <section className="py-20">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { PageHero } from "@/components/page-hero"
 import { ChevronRight } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -38,18 +39,18 @@ const sports = [
 export default function SportsPage() {
   return (
     <main>
-      <section className="bg-primary py-20 text-primary-foreground">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <PageHero imageSrc="/images/london_bridge_hero.png" imageAlt="Tower Bridge and London skyline">
+        <div className="max-w-3xl">
           <h1 className="font-serif text-4xl font-bold md:text-5xl">
             Scholarship Athlete Programs
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-primary-foreground/90 md:text-xl">
+          <p className="mt-6 max-w-2xl text-lg text-indigo-100 md:text-xl">
             Play your sport abroad while earning your Masters or PhD at prestigious UK
             universities. Our overseas recruiting connects talented athletes with world-class
             programs.
           </p>
         </div>
-      </section>
+      </PageHero>
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

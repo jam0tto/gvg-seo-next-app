@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { PageHero } from "@/components/page-hero"
 
 export const metadata: Metadata = {
   title: "FAQ | Guimond Vukovic Group",
@@ -73,23 +74,20 @@ const faqs = [
 export default function FAQPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-950 to-indigo-700 px-4 py-24 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
-              Got Questions?
-            </p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
-              Frequently Asked Questions
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty">
-              Everything you need to know about studying and playing sports in the UK with the Guimond Vukovic Group.
-              Can&apos;t find the answer you&apos;re looking for? Reach out to our team directly.
-            </p>
-          </div>
+      <PageHero imageSrc="/images/london_bridge_hero.png" imageAlt="London skyline at dusk">
+        <div className="max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
+            Got Questions?
+          </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
+            Frequently Asked Questions
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty">
+            Everything you need to know about studying and playing sports in the UK with the Guimond Vukovic Group.
+            Can&apos;t find the answer you&apos;re looking for? Reach out to our team directly.
+          </p>
         </div>
-      </section>
+      </PageHero>
 
       {/* FAQ list */}
       <section className="py-20">

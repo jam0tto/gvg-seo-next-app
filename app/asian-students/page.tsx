@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, MapPin, BadgeDollarSign } from "lucide-react"
 import { AsianInquiryForm } from "./inquiry-form"
@@ -49,24 +50,21 @@ const features = [
 export default function AsianStudentsPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-950 to-indigo-700 px-4 py-24 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
-              Study in the UK
-            </p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
-              Asian Student Athletes
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty">
-              We connect talented student athletes from India, Pakistan, Nepal, and across Asia with UK university
-              opportunities — complete with scholarship support and end-to-end guidance. Our services are completely
-              free.
-            </p>
-          </div>
+      <PageHero imageSrc="/images/london_bridge_hero.png" imageAlt="London skyline at dusk">
+        <div className="max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
+            Study in the UK
+          </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
+            Asian Student Athletes
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty">
+            We connect talented student athletes from India, Pakistan, Nepal, and across Asia with UK university
+            opportunities — complete with scholarship support and end-to-end guidance. Our services are completely
+            free.
+          </p>
         </div>
-      </section>
+      </PageHero>
 
       {/* Intro */}
       <section className="py-20">

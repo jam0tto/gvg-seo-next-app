@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, FileText, UserCheck } from "lucide-react"
 
@@ -23,31 +24,28 @@ export const metadata: Metadata = {
 export default function RecruitmentPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-950 to-indigo-700 px-4 py-24 text-white md:py-36 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
-              For University Coaches &amp; Recruiters
-            </p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl lg:text-6xl">
-              Recruit the Right Student-Athletes for Your University
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty md:text-xl">
-              GVG connects UK universities with motivated, vetted NCAA and NAIA athletes from the USA and Canada. We
-              handle the sourcing, vetting, and initial communication — you choose the right fit for your program.
-            </p>
-            <div className="mt-10">
-              <a
-                href="mailto:recruitment@guimondvukovicgroup.com"
-                className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-indigo-900 transition-colors hover:bg-indigo-50"
-              >
-                Contact Our Recruitment Team
-              </a>
-            </div>
+      <PageHero imageSrc="/images/parliament_hero.png" imageAlt="Houses of Parliament and Westminster, London" tall>
+        <div className="max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
+            For University Coaches &amp; Recruiters
+          </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl lg:text-6xl">
+            Recruit the Right Student-Athletes for Your University
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty md:text-xl">
+            GVG connects UK universities with motivated, vetted NCAA and NAIA athletes from the USA and Canada. We
+            handle the sourcing, vetting, and initial communication — you choose the right fit for your program.
+          </p>
+          <div className="mt-10">
+            <a
+              href="mailto:recruitment@guimondvukovicgroup.com"
+              className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-indigo-900 transition-colors hover:bg-indigo-50"
+            >
+              Contact Our Recruitment Team
+            </a>
           </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* How It Works */}
       <section className="py-20">

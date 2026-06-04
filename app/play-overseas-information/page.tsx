@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, Plane, CheckCircle, ArrowRight, PoundSterling } from "lucide-react"
 import { AthleteContactForm } from "@/components/athlete-contact-form"
+import { PageHero } from "@/components/page-hero"
 
 export const metadata: Metadata = {
   title: "Play Overseas Information | Guimond Vukovic Group",
@@ -21,38 +22,35 @@ export const metadata: Metadata = {
 export default function PlayOverseasInformationPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-950 to-indigo-700 px-4 py-24 text-white md:py-36 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
-              How It Works
-            </p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl lg:text-6xl">
-              Earn Your Master&apos;s and Play Overseas
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty md:text-xl">
-              NCAA and NAIA athletes face no eligibility restrictions when pursuing a Master&apos;s degree in the UK.
-              That means you can continue competing at a high level while earning your postgraduate qualification —
-              with full scholarship support available.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-indigo-900 transition-colors hover:bg-indigo-50"
-              >
-                Get Free Consultation
-              </Link>
-              <Link
-                href="/faq"
-                className="inline-flex items-center rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                Read FAQ <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
+      <PageHero imageSrc="/images/london_bridge_hero.png" imageAlt="Tower Bridge and London skyline" tall>
+        <div className="max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-indigo-300">
+            How It Works
+          </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl lg:text-6xl">
+            Earn Your Master&apos;s and Play Overseas
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-indigo-100 text-pretty md:text-xl">
+            NCAA and NAIA athletes face no eligibility restrictions when pursuing a Master&apos;s degree in the UK.
+            That means you can continue competing at a high level while earning your postgraduate qualification —
+            with full scholarship support available.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-indigo-900 transition-colors hover:bg-indigo-50"
+            >
+              Get Free Consultation
+            </Link>
+            <Link
+              href="/faq"
+              className="inline-flex items-center rounded-lg border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Read FAQ <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* Why Study in the UK? */}
       <section className="py-20">
