@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import "./globals.css";
@@ -43,6 +44,24 @@ export default function RootLayout({
         <div className="flex flex-1 flex-col">{children}</div>
         <Footer />
       </body>
+      {/* Google Analytics (GA4) + Google Ads — single gtag.js load, both properties configured */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-KZTFPX40N3"
+        strategy="afterInteractive"
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KZTFPX40N3');
+            gtag('config', 'AW-17496410069');
+          `,
+        }}
+      />
     </html>
   );
 }

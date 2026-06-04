@@ -129,16 +129,26 @@ All images present in `public/images/`:
 
 ---
 
-### 5. GTM / GA / GSC (Analytics & Search Console)
+### 5. GTM / GA / GSC (Analytics & Search Console) ✓ DONE (partial)
 
-Check what Google Tag Manager, Google Analytics, and Google Search Console configuration exists on the Weebly site and reproduce in the Next.js app:
-- Inspect Weebly site source HTML for GTM container IDs, GA measurement IDs, or GSC verification meta tags
-- Add tracking scripts to `app/layout.tsx` using the Next.js `Script` component
-- Add GSC domain verification meta tag to root layout metadata if needed
+GA4 (`G-KZTFPX40N3`) and Google Ads (`AW-17496410069`) are live via a single `gtag.js` load in `app/layout.tsx` (the Weebly header had duplicate script loads — consolidated). Google Ads conversion event (`AW-17496410069/-FAVCJC49d8bENWP-JZB`) fires in `components/athlete-contact-form.tsx` on submit success, replacing the Weebly jQuery polling hack.
+
+**Still outstanding:** GSC domain verification meta tag — check Weebly site `<head>` for a `google-site-verification` meta tag and add to root layout metadata if present.
 
 ---
 
-### 6. Deferred
+### 6. SEO Redirects ✓ DONE (partial)
+
+`next.config.ts` has 16 permanent (308) redirects:
+- All Weebly `.html` pages → clean slugs (contact, faq, recruitment, undergraduate-studies, privacy-policy, play-overseas-information, african-students)
+- `/indian-pakistani-and-se-asian-students` + `.html` variant → `/asian-students`
+- `/{country}.html` → `/countries/{country}` for all 6 countries
+
+**Deferred:** Blog/news redirects. Weebly blog is at `/blog` and `/blog/[post-slug]` (no `.html` — unusual). News page is `/news.html`. Both redirect to TBD destination; skipped for now since blog content was intentionally not migrated.
+
+---
+
+### 7. Deferred
 
 - **Blog article full content** — `/news` page exists. The 3 Weebly blog posts have not been built as full article pages. Summaries if needed later:
   - **Working in the U.K. Post-Grad** (`/blog/working-in-the-uk-post-grad` on Weebly) — UK Government initiative allowing international students to remain for two years post-degree.

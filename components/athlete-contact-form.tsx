@@ -25,6 +25,9 @@ export function AthleteContactForm() {
       })
       if (!res.ok) throw new Error()
       setSubmitted(true)
+      // Fire Google Ads conversion — equivalent of the Weebly footer conversion script
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ;(window as any).gtag?.("event", "conversion", { send_to: "AW-17496410069/-FAVCJC49d8bENWP-JZB" })
     } catch {
       alert("Something went wrong. Please try again.")
     } finally {
