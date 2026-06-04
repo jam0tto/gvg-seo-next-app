@@ -148,7 +148,40 @@ GA4 (`G-KZTFPX40N3`) and Google Ads (`AW-17496410069`) are live via a single `gt
 
 ---
 
-### 7. Deferred
+### 7. Screaming Frog SEO Issues ✓ DONE
+
+Addressed via Screaming Frog crawl reports (`issues_overview_report_next.csv` / `issues_overview_report_weebly.csv`). Large image files were intentionally excluded.
+
+**Security headers** (`next.config.ts`) — 4 headers now applied globally via `headers()`:
+- `X-Frame-Options: SAMEORIGIN`
+- `X-Content-Type-Options: nosniff`
+- `Referrer-Policy: strict-origin-when-cross-origin`
+- `Content-Security-Policy` covering gtag, GA4, Google Ads domains
+
+**Canonicals** — `metadataBase: new URL('https://www.guimondvukovicgroup.com')` added to root layout; `alternates: { canonical: '/path' }` added to all 41 pages.
+
+**Page titles fixed:**
+- Home + root layout: shortened to under 60 chars
+- FAQ: "FAQ | ..." → "Frequently Asked Questions | ..."
+- All 6 country pages: were 22–25 chars (below 30 minimum) → now 30–32 chars with `| Guimond Vukovic Group` suffix; this also resolved the title=H1 issue since titles now differ from the heroTitle H1
+- 6 sport pages over 60 chars shortened: basketball, american-football, soccer, beach-volleyball, track-and-field, ultimate
+
+**Meta descriptions** — 26 pages shortened to ≤155 chars (all main pages, all 6 country pages, 18 sport pages)
+
+**Non-descriptive anchor text** (`app/page.tsx`) — "Learn more" links in regional hubs section → "Explore African student programs" / "Explore Asian student programs"
+
+**H2 duplicate** (`app/asian-students/page.tsx`) — "Your Partner From Application to Arrival" (shared with african-students page) → "Your Dedicated Asian Student Support Team"
+
+**Not addressed (intentional):**
+- `Images: Missing Size Attributes` — all images use Next.js `<Image>` with `fill` prop; Screaming Frog flags this as missing HTML width/height attributes but Next.js uses CSS-based sizing instead, which is correct
+- `Images: Over 100 KB` — excluded per user instruction
+- `Content: Readability` — requires editorial rewriting, low ROI
+- `Content: Low Content Pages` — needs editorial decision on which pages to expand
+- `H2: Multiple` — not an issue per HTML spec; flagged as informational only
+
+---
+
+### 8. Deferred
 
 - **Blog article full content** — `/news` page exists. The 3 Weebly blog posts have not been built as full article pages. Summaries if needed later:
   - **Working in the U.K. Post-Grad** (`/blog/working-in-the-uk-post-grad` on Weebly) — UK Government initiative allowing international students to remain for two years post-degree.
