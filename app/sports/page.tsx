@@ -6,7 +6,8 @@ import { ChevronRight } from "lucide-react"
 export const metadata: Metadata = {
   title: "Scholarship Athlete Programs | Play Your Sport Abroad | GVG",
   description:
-    "Play your sport abroad while earning your Masters or PhD at prestigious UK universities. Our overseas recruiting connects talented athletes with world-class programs.",
+    "Play your sport abroad while earning your Masters or PhD at a UK university. GVG's free recruiting connects scholarship athletes with world-class British programs.",
+  alternates: { canonical: "/sports" },
 }
 
 const sports = [

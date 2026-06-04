@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Play Lacrosse Abroad | Scholarship Athlete Program UK",
   description: "Play lacrosse overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to compete at British universities.",
   keywords: ["lacrosse abroad", "play lacrosse overseas", "UK lacrosse scholarship", "scholarship athlete UK", "study abroad lacrosse", "overseas lacrosse recruiting", "moved to london lacrosse"],
+  alternates: { canonical: "/sports/lacrosse" },
   openGraph: {
     title: "Play Lacrosse Abroad | Scholarship Athlete Program",
     description: "Play lacrosse overseas while earning your Masters or PhD in the UK.",

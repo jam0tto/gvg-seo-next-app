@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Play Water Polo Abroad | Scholarship Athlete Program UK",
   description: "Play water polo overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to compete at British universities.",
   keywords: ["water polo abroad", "play water polo overseas", "UK water polo scholarship", "scholarship athlete UK", "study abroad water polo", "overseas water polo recruiting", "moved to london water polo"],
+  alternates: { canonical: "/sports/water-polo" },
   openGraph: {
     title: "Play Water Polo Abroad | Scholarship Athlete Program",
     description: "Play water polo overseas while earning your Masters or PhD in the UK.",

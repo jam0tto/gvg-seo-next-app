@@ -8,7 +8,7 @@ import { AsianInquiryForm } from "./inquiry-form"
 export const metadata: Metadata = {
   title: "Asian Students | Study in the UK | Guimond Vukovic Group",
   description:
-    "Support for student athletes from India, Pakistan, Nepal, and across Asia. Free consulting to study in the UK with scholarship opportunities of 20–40% off tuition.",
+    "Free consulting for student athletes from India, Pakistan, Nepal, and across Asia. Study in the UK with scholarship opportunities of 20–40% off tuition.",
   keywords: [
     "Indian students UK",
     "Pakistan students UK",
@@ -16,10 +16,11 @@ export const metadata: Metadata = {
     "Asian students scholarship UK",
     "study abroad Asia",
   ],
+  alternates: { canonical: "/asian-students" },
   openGraph: {
     title: "Asian Students | Study in the UK | Guimond Vukovic Group",
     description:
-      "Support for student athletes from India, Pakistan, Nepal, and across Asia. Free consulting to study in the UK with scholarship opportunities of 20–40% off tuition.",
+      "Free consulting for student athletes from India, Pakistan, Nepal, and across Asia. Study in the UK with scholarship opportunities of 20–40% off tuition.",
   },
 }
 
@@ -112,7 +113,7 @@ export default function AsianStudentsPage() {
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">Why GVG</p>
             <h2 className="mt-3 font-serif text-3xl font-bold text-foreground md:text-4xl">
-              Your Partner From Application to Arrival
+              Your Dedicated Asian Student Support Team
             </h2>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-3">

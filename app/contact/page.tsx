@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Contact Us | Guimond Vukovic Group",
   description:
     "Get in touch with the Guimond Vukovic Group. Free consulting for NCAA and NAIA athletes looking to earn a Master's degree and play sports in the UK.",
+  alternates: { canonical: "/contact" },
 }
 
 export default function ContactPage() {

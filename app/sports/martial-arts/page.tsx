@@ -3,8 +3,9 @@ import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
   title: "Train Martial Arts Abroad | Scholarship Athlete Program UK",
-  description: "Train martial arts overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking combat sports opportunities abroad.",
+  description: "Train martial arts overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British programs — free.",
   keywords: ["martial arts abroad", "MMA overseas", "UK martial arts scholarship", "scholarship athlete UK", "study abroad martial arts", "overseas combat sports recruiting", "moved to london martial arts"],
+  alternates: { canonical: "/sports/martial-arts" },
   openGraph: {
     title: "Train Martial Arts Abroad | Scholarship Athlete Program",
     description: "Train martial arts overseas while earning your Masters or PhD in the UK.",

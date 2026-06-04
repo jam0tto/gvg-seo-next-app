@@ -2,11 +2,12 @@ import { Metadata } from "next"
 import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
-  title: "Play American Football Abroad | Scholarship Athlete Program UK",
-  description: "Play American football overseas while earning your Masters or PhD in the UK. Expert recruiting services for scholarship athletes looking to study abroad and play college football in London and across Britain.",
+  title: "American Football Abroad | Scholarship Athlete UK",
+  description: "Play American Football overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British universities — free.",
   keywords: ["american football abroad", "play football overseas", "UK american football scholarship", "scholarship athlete UK", "study abroad football", "overseas football recruiting", "play college football abroad", "moved to london football"],
+  alternates: { canonical: "/sports/american-football" },
   openGraph: {
-    title: "Play American Football Abroad | Scholarship Athlete Program",
+    title: "American Football Abroad | Scholarship Athlete UK",
     description: "Play American football overseas while earning your Masters or PhD in the UK.",
   },
 }

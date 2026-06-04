@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Guimond Vukovic Group",
   description:
     "Privacy policy for the Guimond Vukovic Group. Learn how we collect, use, and protect your personal data.",
+  alternates: { canonical: "/privacy-policy" },
 }
 
 export default function PrivacyPolicyPage() {

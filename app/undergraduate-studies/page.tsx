@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "Undergraduate Studies in the UK | Guimond Vukovic Group",
   description:
-    "Expert UCAS application support for international students applying to UK undergraduate programs. Free consulting, personal statement coaching, and visa assistance from GVG.",
+    "Free UCAS support for international students. Personal statement coaching, university selection, and visa assistance for UK undergraduate applications.",
   keywords: [
     "UCAS application support",
     "UK undergraduate international students",
@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     "UCAS personal statement help",
     "UK university application",
   ],
+  alternates: { canonical: "/undergraduate-studies" },
   openGraph: {
     title: "Undergraduate Studies in the UK | Guimond Vukovic Group",
     description:

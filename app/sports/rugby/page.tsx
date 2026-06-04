@@ -3,8 +3,9 @@ import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
   title: "Play Rugby Abroad | Scholarship Athlete Program UK",
-  description: "Play rugby overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes looking to study abroad and compete in British university rugby.",
+  description: "Play rugby overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British rugby programs — free.",
   keywords: ["rugby abroad", "play rugby overseas", "UK rugby scholarship", "scholarship athlete UK", "study abroad rugby", "overseas rugby recruiting", "moved to london rugby", "play college rugby abroad"],
+  alternates: { canonical: "/sports/rugby" },
   openGraph: {
     title: "Play Rugby Abroad | Scholarship Athlete Program",
     description: "Play rugby overseas while earning your Masters or PhD in the UK.",

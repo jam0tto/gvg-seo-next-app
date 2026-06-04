@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Play Badminton Abroad | Scholarship Athlete Program UK",
   description: "Play badminton overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to compete at British universities.",
   keywords: ["badminton abroad", "play badminton overseas", "UK badminton scholarship", "scholarship athlete UK", "study abroad badminton", "overseas badminton recruiting", "moved to london badminton"],
+  alternates: { canonical: "/sports/badminton" },
   openGraph: {
     title: "Play Badminton Abroad | Scholarship Athlete Program",
     description: "Play badminton overseas while earning your Masters or PhD in the UK.",

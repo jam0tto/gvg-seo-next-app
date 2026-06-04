@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Dive Abroad | Scholarship Athlete Program UK",
   description: "Compete in diving overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to train at British universities.",
   keywords: ["diving abroad", "dive overseas", "UK diving scholarship", "scholarship athlete UK", "study abroad diving", "overseas diving recruiting", "moved to london diving"],
+  alternates: { canonical: "/sports/diving" },
   openGraph: {
     title: "Dive Abroad | Scholarship Athlete Program",
     description: "Compete in diving overseas while earning your Masters or PhD in the UK.",

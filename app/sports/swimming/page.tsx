@@ -3,8 +3,9 @@ import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
   title: "Swim Abroad | Scholarship Athlete Program UK",
-  description: "Swim overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to compete at British university swimming programs.",
+  description: "Swim overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British university swimming programs — free.",
   keywords: ["swimming abroad", "swim overseas", "UK swimming scholarship", "scholarship athlete UK", "study abroad swimming", "overseas swimming recruiting", "moved to london swimming"],
+  alternates: { canonical: "/sports/swimming" },
   openGraph: {
     title: "Swim Abroad | Scholarship Athlete Program",
     description: "Swim overseas while earning your Masters or PhD in the UK.",

@@ -2,9 +2,10 @@ import { Metadata } from "next"
 import { CountryPageLayout } from "@/components/country-page-layout"
 
 export const metadata: Metadata = {
-  title: "Study Abroad from Nigeria",
-  description: "Expert guidance for Nigerian students seeking international education opportunities in the UK, Canada, USA, and beyond. Free university application support, visa guidance, and scholarship advice from GVG Nigeria.",
+  title: "Study Abroad from Nigeria | Guimond Vukovic Group",
+  description: "Expert guidance for Nigerian students seeking education in the UK and Canada. Free university application support, visa guidance, and scholarship advice.",
   keywords: ["study abroad Nigeria", "Nigerian students UK", "study in Canada from Nigeria", "UCAS application Nigeria", "Nigerian student visa UK", "scholarship for Nigerian students", "international education Nigeria"],
+  alternates: { canonical: "/countries/nigeria" },
   openGraph: {
     title: "Study Abroad from Nigeria | Guimond Vukovic Group",
     description: "Expert guidance for Nigerian students seeking international education opportunities in the UK, Canada, USA, and beyond.",

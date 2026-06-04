@@ -3,9 +3,10 @@ import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 
 export const metadata: Metadata = {
-  title: "FAQ | Guimond Vukovic Group",
+  title: "Frequently Asked Questions | Guimond Vukovic Group",
   description:
     "Frequently asked questions about studying and playing sports abroad with the Guimond Vukovic Group. Learn about costs, eligibility, visas, and more.",
+  alternates: { canonical: "/faq" },
 }
 
 const faqs = [

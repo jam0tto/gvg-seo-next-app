@@ -3,8 +3,9 @@ import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
   title: "Play Golf Abroad | Scholarship Athlete Program UK",
-  description: "Play golf overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to compete at British universities near legendary courses.",
+  description: "Play golf overseas and earn your Masters or PhD near legendary UK courses. GVG places scholarship athletes at British universities — free.",
   keywords: ["golf abroad", "play golf overseas", "UK golf scholarship", "scholarship athlete UK", "study abroad golf", "overseas golf recruiting", "moved to london golf", "play college golf abroad"],
+  alternates: { canonical: "/sports/golf" },
   openGraph: {
     title: "Play Golf Abroad | Scholarship Athlete Program",
     description: "Play golf overseas while earning your Masters or PhD in the UK.",

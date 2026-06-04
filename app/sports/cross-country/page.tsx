@@ -3,8 +3,9 @@ import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
   title: "Play Cross Country Abroad | Scholarship Athlete Program UK",
-  description: "Run cross country overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to study abroad and compete at British universities.",
+  description: "Run cross country overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British programs — free.",
   keywords: ["cross country abroad", "run overseas", "UK running scholarship", "scholarship athlete UK", "study abroad running", "overseas cross country recruiting", "distance running abroad", "moved to london runner"],
+  alternates: { canonical: "/sports/cross-country" },
   openGraph: {
     title: "Play Cross Country Abroad | Scholarship Athlete Program",
     description: "Run cross country overseas while earning your Masters or PhD in the UK.",

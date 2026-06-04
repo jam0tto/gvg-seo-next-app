@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "News & Reviews | Guimond Vukovic Group",
   description:
     "GVG annual player reviews, athlete testimonials, and the latest news on student athlete opportunities in the UK.",
+  alternates: { canonical: "/news" },
 }
 
 const playerReviews = [

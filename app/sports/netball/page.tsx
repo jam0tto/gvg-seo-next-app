@@ -3,8 +3,9 @@ import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
   title: "Play Netball Abroad | Scholarship Athlete Program UK",
-  description: "Play netball overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to compete in British Superleague and university netball.",
+  description: "Play netball overseas and earn your Masters or PhD in the UK. GVG connects scholarship athletes with British Superleague and university netball programs.",
   keywords: ["netball abroad", "play netball overseas", "UK netball scholarship", "scholarship athlete UK", "study abroad netball", "overseas netball recruiting", "moved to london netball"],
+  alternates: { canonical: "/sports/netball" },
   openGraph: {
     title: "Play Netball Abroad | Scholarship Athlete Program",
     description: "Play netball overseas while earning your Masters or PhD in the UK.",

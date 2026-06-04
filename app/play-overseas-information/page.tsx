@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Play Overseas Information | Guimond Vukovic Group",
   description:
     "Learn how NCAA and NAIA athletes can earn a Master's degree while playing sports in the UK. Cost breakdowns, founder bios, and how to get started.",
+  alternates: { canonical: "/play-overseas-information" },
   keywords: [
     "play overseas",
     "NCAA UK masters",

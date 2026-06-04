@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Guimond Vukovic Group | Play Overseas & Earn Your Master's Degree",
+  metadataBase: new URL("https://www.guimondvukovicgroup.com"),
+  title: "Guimond Vukovic Group | Play Overseas & Earn Your Masters",
   description:
     "Free consulting services for NCAA, NAIA, USPORTS, and club athletes to earn Master's degrees while playing sports overseas in the UK.",
   keywords: [

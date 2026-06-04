@@ -2,9 +2,10 @@ import { Metadata } from "next"
 import { CountryPageLayout } from "@/components/country-page-layout"
 
 export const metadata: Metadata = {
-  title: "Study Abroad from India",
-  description: "Expert guidance for Indian students seeking international education in the UK, USA, Canada, and Australia. Free university application support, visa guidance, and scholarship advice from GVG India.",
+  title: "Study in the UK from India | Guimond Vukovic Group",
+  description: "Expert guidance for Indian students pursuing international education in the UK. Free university application support, visa guidance, and scholarship advice from GVG.",
   keywords: ["study abroad India", "Indian students UK", "study in USA from India", "UCAS application India", "Indian student visa UK", "scholarship for Indian students", "international education India", "MS abroad from India"],
+  alternates: { canonical: "/countries/india" },
   openGraph: {
     title: "Study Abroad from India | Guimond Vukovic Group",
     description: "Expert guidance for Indian students seeking international education in the UK, USA, Canada, and Australia.",

@@ -3,8 +3,9 @@ import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
   title: "Train Judo Abroad | Scholarship Athlete Program UK",
-  description: "Train judo overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking martial arts opportunities abroad at British universities.",
+  description: "Train judo overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British programs — free.",
   keywords: ["judo abroad", "martial arts overseas", "UK judo scholarship", "scholarship athlete UK", "study abroad judo", "overseas judo recruiting", "moved to london judo"],
+  alternates: { canonical: "/sports/judo" },
   openGraph: {
     title: "Train Judo Abroad | Scholarship Athlete Program",
     description: "Train judo overseas while earning your Masters or PhD in the UK.",

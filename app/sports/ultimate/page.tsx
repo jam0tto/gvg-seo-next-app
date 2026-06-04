@@ -2,11 +2,12 @@ import { Metadata } from "next"
 import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
-  title: "Play Ultimate Frisbee Abroad | Scholarship Athlete Program UK",
-  description: "Play ultimate frisbee overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to compete at British universities.",
+  title: "Ultimate Frisbee Abroad | Scholarship Athlete UK",
+  description: "Play ultimate frisbee overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British programs — free.",
   keywords: ["ultimate frisbee abroad", "play ultimate overseas", "UK ultimate scholarship", "scholarship athlete UK", "study abroad ultimate", "overseas ultimate recruiting", "moved to london ultimate"],
+  alternates: { canonical: "/sports/ultimate" },
   openGraph: {
-    title: "Play Ultimate Frisbee Abroad | Scholarship Athlete Program",
+    title: "Ultimate Frisbee Abroad | Scholarship Athlete UK",
     description: "Play ultimate frisbee overseas while earning your Masters or PhD in the UK.",
   },
 }

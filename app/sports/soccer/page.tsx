@@ -2,11 +2,12 @@ import { Metadata } from "next"
 import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
-  title: "Play College Soccer Abroad | Scholarship Athlete UK Recruiting",
-  description: "Play college soccer and still study abroad in the UK. Expert recruiting for scholarship athletes seeking to play soccer overseas while earning a Masters or PhD degree.",
+  title: "Play College Soccer Abroad | Scholarship Athlete UK",
+  description: "Play college soccer while earning your Masters or PhD at a UK university. GVG places scholarship athletes at British universities — free.",
   keywords: ["play college soccer abroad", "soccer abroad", "play soccer overseas", "UK football scholarship", "scholarship athlete UK", "study abroad soccer", "overseas soccer recruiting", "moved to london football", "play college soccer and still study abroad"],
+  alternates: { canonical: "/sports/soccer" },
   openGraph: {
-    title: "Play College Soccer Abroad | Study & Play Overseas",
+    title: "Play College Soccer Abroad | Scholarship Athlete UK",
     description: "Play college soccer and still study abroad while earning your Masters or PhD in the UK.",
   },
 }

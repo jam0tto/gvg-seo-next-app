@@ -3,8 +3,9 @@ import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
   title: "Cheer Abroad | Scholarship Athlete Program UK",
-  description: "Compete in cheerleading overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to perform at British universities.",
+  description: "Compete in cheerleading overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British programs — free.",
   keywords: ["cheerleading abroad", "cheer overseas", "UK cheer scholarship", "scholarship athlete UK", "study abroad cheerleading", "overseas cheer recruiting", "moved to london cheerleading"],
+  alternates: { canonical: "/sports/cheer" },
   openGraph: {
     title: "Cheer Abroad | Scholarship Athlete Program",
     description: "Compete in cheerleading overseas while earning your Masters or PhD in the UK.",

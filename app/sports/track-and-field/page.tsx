@@ -2,11 +2,12 @@ import { Metadata } from "next"
 import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
-  title: "Compete Track and Field Abroad | Scholarship Athlete Program UK",
-  description: "Compete in track and field overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking athletics opportunities abroad.",
+  title: "Track & Field Abroad | Scholarship Athlete UK",
+  description: "Compete in track and field overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British programs — free.",
   keywords: ["track and field abroad", "athletics overseas", "UK athletics scholarship", "scholarship athlete UK", "study abroad track", "overseas athletics recruiting", "moved to london athletics", "run track abroad"],
+  alternates: { canonical: "/sports/track-and-field" },
   openGraph: {
-    title: "Compete Track and Field Abroad | Scholarship Athlete Program",
+    title: "Track & Field Abroad | Scholarship Athlete UK",
     description: "Compete in track and field overseas while earning your Masters or PhD in the UK.",
   },
 }

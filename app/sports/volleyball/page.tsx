@@ -3,8 +3,9 @@ import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
   title: "Play Volleyball Abroad | Scholarship Athlete Program UK",
-  description: "Play volleyball overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes looking to study abroad and compete at British universities.",
+  description: "Play volleyball overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British universities — free.",
   keywords: ["volleyball abroad", "play volleyball overseas", "UK volleyball scholarship", "scholarship athlete UK", "study abroad volleyball", "overseas volleyball recruiting", "college volleyball abroad", "moved to london volleyball"],
+  alternates: { canonical: "/sports/volleyball" },
   openGraph: {
     title: "Play Volleyball Abroad | Scholarship Athlete Program",
     description: "Play volleyball overseas while earning your Masters or PhD in the UK.",

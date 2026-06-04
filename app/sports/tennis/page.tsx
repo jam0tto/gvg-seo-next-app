@@ -3,8 +3,9 @@ import { SportPageLayout } from "@/components/sport-page-layout"
 
 export const metadata: Metadata = {
   title: "Play Tennis Abroad | Scholarship Athlete Program UK",
-  description: "Play tennis overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to compete at British universities near Wimbledon.",
+  description: "Play tennis overseas and earn your Masters or PhD at a UK university — near Wimbledon. GVG places scholarship athletes at British programs.",
   keywords: ["tennis abroad", "play tennis overseas", "UK tennis scholarship", "scholarship athlete UK", "study abroad tennis", "overseas tennis recruiting", "moved to london tennis", "play college tennis abroad"],
+  alternates: { canonical: "/sports/tennis" },
   openGraph: {
     title: "Play Tennis Abroad | Scholarship Athlete Program",
     description: "Play tennis overseas while earning your Masters or PhD in the UK.",

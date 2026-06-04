@@ -6,7 +6,7 @@ import { CheckCircle, FileText, UserCheck } from "lucide-react"
 export const metadata: Metadata = {
   title: "Recruit Student Athletes | Guimond Vukovic Group",
   description:
-    "Partner with Guimond Vukovic Group to recruit vetted NCAA and NAIA student athletes from the USA and Canada for your UK university. We provide full athlete profiles, videos, and academic records.",
+    "Partner with GVG to recruit vetted NCAA and NAIA athletes for your UK university. Full profiles, video highlights, and academic records provided.",
   keywords: [
     "recruit student athletes UK",
     "NCAA athletes UK universities",
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "university athlete recruitment",
     "student athlete placement UK",
   ],
+  alternates: { canonical: "/recruitment" },
   openGraph: {
     title: "Recruit Student Athletes | Guimond Vukovic Group",
     description:

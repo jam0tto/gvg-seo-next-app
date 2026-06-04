@@ -2,9 +2,10 @@ import { Metadata } from "next"
 import { CountryPageLayout } from "@/components/country-page-layout"
 
 export const metadata: Metadata = {
-  title: "Study Abroad from Zambia",
-  description: "Expert guidance for Zambian students seeking international education in the UK, Canada, Australia, and beyond. Free university application support, visa guidance, and affordable tuition options from GVG Zambia.",
+  title: "Study Abroad from Zambia | Guimond Vukovic Group",
+  description: "Expert guidance for Zambian students seeking international education in the UK. Free university application support, visa guidance, and affordable tuition options from GVG.",
   keywords: ["study abroad Zambia", "Zambian students UK", "study in Canada from Zambia", "UCAS application Zambia", "Zambian student visa", "scholarship for Zambian students", "international education Zambia", "Southern Africa study abroad"],
+  alternates: { canonical: "/countries/zambia" },
   openGraph: {
     title: "Study Abroad from Zambia | Guimond Vukovic Group",
     description: "Expert guidance for Zambian students seeking international education in the UK, Canada, Australia, and beyond.",

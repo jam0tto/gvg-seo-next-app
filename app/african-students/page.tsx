@@ -8,7 +8,7 @@ import { AfricanInquiryForm } from "./inquiry-form"
 export const metadata: Metadata = {
   title: "African Students | Study in the UK | Guimond Vukovic Group",
   description:
-    "Support for African student athletes from Nigeria, Kenya, Zambia and across Africa. Free consulting to study in the UK with scholarship opportunities of 20–40% off tuition.",
+    "Free consulting for African student athletes from Nigeria, Kenya, and Zambia. UK university scholarships of 20–40% off tuition — apply now.",
   keywords: [
     "African students UK",
     "study abroad Africa",
@@ -17,10 +17,11 @@ export const metadata: Metadata = {
     "Zambia UK scholarship",
     "African athlete scholarship",
   ],
+  alternates: { canonical: "/african-students" },
   openGraph: {
     title: "African Students | Study in the UK | Guimond Vukovic Group",
     description:
-      "Support for African student athletes from Nigeria, Kenya, Zambia and across Africa. Free consulting to study in the UK with scholarship opportunities of 20–40% off tuition.",
+      "Free consulting for African student athletes from Nigeria, Kenya, and Zambia. Scholarship opportunities of 20–40% off tuition at UK universities.",
   },
 }
 

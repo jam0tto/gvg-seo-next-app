@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, Trophy, Plane, CheckCircle, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Guimond Vukovic Group | Play Overseas & Earn Your Master's Degree",
+  title: "Guimond Vukovic Group | Play Overseas & Earn Your Masters",
   description:
-    "Free consulting for NCAA, NAIA, USPORTS, and club athletes to earn a Master's degree while playing sports in the UK. 60+ athletes placed at 15+ partner universities.",
+    "Free consulting for NCAA, NAIA, and club athletes to play sports in the UK while earning a Master's degree. 60+ athletes placed, 100% free.",
   keywords: [
     "play overseas",
     "NCAA athletes UK",
@@ -17,8 +17,9 @@ export const metadata: Metadata = {
     "NAIA overseas",
     "play sports UK",
   ],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Guimond Vukovic Group | Play Overseas & Earn Your Master's Degree",
+    title: "Guimond Vukovic Group | Play Overseas & Earn Your Masters",
     description:
       "Free consulting for NCAA, NAIA, and club athletes to earn Master's degrees while playing overseas in the UK.",
   },
@@ -250,6 +251,7 @@ export default function HomePage() {
                 description:
                   "We have local recruiters in Nigeria, Kenya, and Zambia, with scholarship opportunities across our UK partner network.",
                 href: "/african-students",
+                linkLabel: "Explore African student programs",
                 countries: ["Nigeria", "Kenya", "Zambia"],
               },
               {
@@ -257,6 +259,7 @@ export default function HomePage() {
                 description:
                   "Dedicated support for students from India, Pakistan, Nepal, and across Southeast Asia pursuing UK university opportunities.",
                 href: "/asian-students",
+                linkLabel: "Explore Asian student programs",
                 countries: ["India", "Pakistan", "Nepal"],
               },
             ].map((region) => (
@@ -278,7 +281,7 @@ export default function HomePage() {
                     href={region.href}
                     className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-all hover:gap-2.5"
                   >
-                    Learn more <ArrowRight className="h-4 w-4" />
+                    {region.linkLabel} <ArrowRight className="h-4 w-4" />
                   </Link>
                 </CardContent>
               </Card>
