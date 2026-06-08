@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, Plane, CheckCircle, ArrowRight, PoundSterling } from "lucide-react"
-import { AthleteContactForm } from "@/components/athlete-contact-form"
+import { PlayOverseasForm } from "@/components/play-overseas-form"
 import { PageHero } from "@/components/page-hero"
 
 export const metadata: Metadata = {
@@ -235,7 +235,7 @@ export default function PlayOverseasInformationPage() {
           <div className="mt-10">
             <Card>
               <CardContent className="p-6 sm:p-8">
-                <AthleteContactForm />
+                <PlayOverseasForm />
               </CardContent>
             </Card>
           </div>

@@ -113,29 +113,32 @@ export function AthleteContactForm() {
         </Field>
 
         <Field>
-          <FieldLabel htmlFor="timeZone">Current Time Zone</FieldLabel>
+          <FieldLabel htmlFor="timeZone">Current Time Zone *</FieldLabel>
           <Input
             id="timeZone"
             name="timeZone"
+            required
             placeholder="e.g. EST, PST, GMT-5"
           />
         </Field>
 
         <Field>
-          <FieldLabel htmlFor="phone">Phone Number</FieldLabel>
+          <FieldLabel htmlFor="phone">Phone Number *</FieldLabel>
           <Input
             id="phone"
             name="phone"
             type="tel"
+            required
             placeholder="Your phone number"
           />
         </Field>
 
         <Field>
-          <FieldLabel htmlFor="comments">Additional Comments</FieldLabel>
+          <FieldLabel htmlFor="comments">Comment *</FieldLabel>
           <Textarea
             id="comments"
             name="comments"
+            required
             rows={4}
             placeholder="Any additional information you'd like to share..."
           />

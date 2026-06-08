@@ -37,6 +37,12 @@ const nextConfig: NextConfig = {
       // Asian students — URL simplified; handle both bare and .html variants
       { source: "/indian-pakistani-and-se-asian-students", destination: "/asian-students", permanent: true },
       { source: "/indian-pakistani-and-se-asian-students.html", destination: "/asian-students", permanent: true },
+      // Blog/news — blog content not migrated, all routes point to /news
+      { source: "/news.html", destination: "/news", permanent: true },
+      { source: "/blog", destination: "/news", permanent: true },
+      { source: "/blog/working-in-the-uk-post-grad", destination: "/news", permanent: true },
+      { source: "/blog/uk-ready-to-play", destination: "/news", permanent: true },
+      { source: "/blog/national-league-competitions", destination: "/news", permanent: true },
       // Country pages — Weebly had /{country}.html at root, now under /countries/
       { source: "/nigeria.html", destination: "/countries/nigeria", permanent: true },
       { source: "/kenya.html", destination: "/countries/kenya", permanent: true },

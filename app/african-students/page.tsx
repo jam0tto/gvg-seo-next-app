@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, MapPin, BadgeDollarSign } from "lucide-react"
@@ -26,9 +27,9 @@ export const metadata: Metadata = {
 }
 
 const countryLinks = [
-  { name: "Nigeria", href: "/countries/nigeria" },
-  { name: "Kenya", href: "/countries/kenya" },
-  { name: "Zambia", href: "/countries/zambia" },
+  { name: "Nigeria", href: "/countries/nigeria", thumbnail: "/images/nigeria_thumbnail.jpg" },
+  { name: "Kenya", href: "/countries/kenya", thumbnail: "/images/kenya_thumbnail.jpg" },
+  { name: "Zambia", href: "/countries/zambia", thumbnail: "/images/zambia_thumbnail.jpg" },
 ]
 
 const features = [
@@ -90,17 +91,24 @@ export default function AfricanStudentsPage() {
             {/* Country cards */}
             <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
               {countryLinks.map((country) => (
-                <Card key={country.name} className="border-border/50 transition-shadow hover:shadow-md">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-foreground text-lg">{country.name}</h3>
-                    <Link
-                      href={country.href}
-                      className="mt-2 block text-sm text-accent hover:underline"
-                    >
-                      Learn about opportunities for {country.name} students &rarr;
-                    </Link>
-                  </CardContent>
-                </Card>
+                <Link key={country.name} href={country.href} className="group">
+                  <Card className="overflow-hidden border-border/50 transition-shadow hover:shadow-md h-full">
+                    <div className="relative h-40 w-full">
+                      <Image
+                        src={country.thumbnail}
+                        alt={`${country.name} landscape`}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="font-semibold text-foreground text-lg">{country.name}</h3>
+                      <p className="mt-1 text-sm text-accent group-hover:underline">
+                        Explore opportunities &rarr;
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>

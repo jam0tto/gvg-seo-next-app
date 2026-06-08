@@ -121,19 +121,19 @@ All forms POST to `app/api/contact/route.ts` via the Resend SDK. API key is in `
 All images present in `public/images/`:
 - 24 sport hero images (`sports/*.jpg`)
 - 6 country hero images (`hero-{country}.jpg`)
+- 6 country thumbnails (`{country}_thumbnail.jpg`) — used in hub page 3-packs
 - Founder headshots: `derek_headshot.png` (322×483), `vlad_headshot.jpg` (325×309)
 - Partner university logos (11): Essex, UWE, UEL, Bournemouth, ARU, DMU, Loughborough, Nottingham Trent, Derby, Hartpury, Newcastle
 - Partner org logos (6): Tomasik, NCAA, U Sports, NAIA, BUCS, UCAS
 
-**Still needed:** Any hero/section images for `/african-students`, `/asian-students`, `/recruitment`, `/undergraduate-studies`, `/faq` — check Weebly source pages via browser dev tools Network tab.
 
 ---
 
-### 5. GTM / GA / GSC (Analytics & Search Console) ✓ DONE (partial)
+### 5. GTM / GA / GSC (Analytics & Search Console) ✓ DONE
 
 GA4 (`G-KZTFPX40N3`) and Google Ads (`AW-17496410069`) are live via a single `gtag.js` load in `app/layout.tsx` (the Weebly header had duplicate script loads — consolidated). Google Ads conversion event (`AW-17496410069/-FAVCJC49d8bENWP-JZB`) fires in `components/athlete-contact-form.tsx` on submit success, replacing the Weebly jQuery polling hack.
 
-**Still outstanding:** GSC domain verification meta tag — check Weebly site `<head>` for a `google-site-verification` meta tag and add to root layout metadata if present.
+**GSC:** Verified at the DNS record level (no meta tag needed). There may also be a personal `google-site-verification` meta tag for a secondary GSC account — if one exists in `app/layout.tsx`, do NOT remove it.
 
 ---
 
@@ -144,7 +144,7 @@ GA4 (`G-KZTFPX40N3`) and Google Ads (`AW-17496410069`) are live via a single `gt
 - `/indian-pakistani-and-se-asian-students` + `.html` variant → `/asian-students`
 - `/{country}.html` → `/countries/{country}` for all 6 countries
 
-**Deferred:** Blog/news redirects. Weebly blog is at `/blog` and `/blog/[post-slug]` (no `.html` — unusual). News page is `/news.html`. Both redirect to TBD destination; skipped for now since blog content was intentionally not migrated.
+**Blog/news redirects ✓ DONE:** `/news.html`, `/blog`, and all 3 blog post slugs → `/news`.
 
 ---
 
@@ -181,8 +181,20 @@ Addressed via Screaming Frog crawl reports (`issues_overview_report_next.csv` / 
 
 ---
 
-### 8. Deferred
+### 8. Contact Form Testing ✓ DONE
 
+All 3 form types tested end-to-end and confirmed working:
+- **General contact form** (`/contact`) — `formType: "contact"` → Derek. Subject: "New Contact Inquiry"
+- **Play Overseas athlete form** (`/play-overseas-information`) — `formType: "play-overseas"` → Derek. Radio buttons for referral source, sport, and level played. Fires Google Ads conversion on submit.
+- **Country form** (each `/countries/*` page) — `formType: "country"` → routes to country rep based on hidden `country` field.
+
+Note: hub inquiry forms (`/african-students`, `/asian-students`) were not explicitly tested but share the same API route and pattern.
+
+---
+
+### 9. Deferred
+
+- **`/news` images** — Weebly version is image-heavy; pull player/testimonial photos via browser devtools and add post-launch.
 - **Blog article full content** — `/news` page exists. The 3 Weebly blog posts have not been built as full article pages. Summaries if needed later:
   - **Working in the U.K. Post-Grad** (`/blog/working-in-the-uk-post-grad` on Weebly) — UK Government initiative allowing international students to remain for two years post-degree.
   - **U.K. Ready to Play!** (`/blog/uk-ready-to-play` on Weebly) — BUCS statement on resumption of university athletics.

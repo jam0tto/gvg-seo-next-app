@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
     }
   } else if (formType === "athlete") {
     to = DEFAULT_TO
-    subject = "New Athlete Inquiry"
+    subject = "New Contact Inquiry"
     emailFields = {
       "First Name": fields.firstName,
       "Last Name": fields.lastName,
@@ -70,6 +70,21 @@ export async function POST(request: NextRequest) {
       "Time Zone": fields.timeZone,
       "Phone": fields.phone,
       "Comments": fields.comments,
+    }
+  } else if (formType === "play-overseas") {
+    to = DEFAULT_TO
+    subject = "New Play Overseas Inquiry"
+    emailFields = {
+      "First Name": fields.firstName,
+      "Last Name": fields.lastName,
+      "Phone": fields.phone,
+      "Time Zone": fields.timeZone,
+      "How did you hear about us": fields.referral === "Other" ? `Other — ${fields.referralOther}` : fields.referral,
+      "University": fields.university,
+      "Major / GPA": fields.majorGpa,
+      "Sport": fields.sport,
+      "Email": fields.email,
+      "Level played": fields.level === "Other" ? `Other — ${fields.levelOther}` : fields.level,
     }
   } else if (formType === "african-hub" || formType === "asian-hub") {
     to = DEFAULT_TO
