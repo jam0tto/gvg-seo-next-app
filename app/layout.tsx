@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { SITE_NAME, ogImages } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,6 +29,18 @@ export const metadata: Metadata = {
     "play sports UK",
     "NAIA overseas",
   ],
+  // Fallback share tags for routes without their own metadata (e.g. the 404 page).
+  // Pages set their full metadata through pageMetadata() in lib/seo.ts.
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_US",
+    images: [{ url: ogImages.home.url, width: 1200, height: 630, alt: ogImages.home.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [{ url: ogImages.home.url, alt: ogImages.home.alt }],
+  },
 };
 
 export default function RootLayout({

@@ -1,9 +1,9 @@
-import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { CheckCircle, GraduationCap, Trophy, Users } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
 const title = "NCAA, NAIA, USPORTS | Guimond Vukovic Group"
 const description =
@@ -11,20 +11,12 @@ const description =
 const heroImage = "/images/hp_hero.png"
 const heroAlt = "Student athletes studying and playing sports in the UK"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title,
   description,
-  alternates: { canonical: "/ncaa-naia-usports" },
-  openGraph: {
-    type: "website",
-    url: "/ncaa-naia-usports",
-    siteName: "Guimond Vukovic Group",
-    title,
-    description,
-    images: [{ url: heroImage, width: 1366, height: 768, alt: heroAlt }],
-  },
-  twitter: { card: "summary_large_image", title, description, images: [heroImage] },
-}
+  path: "/ncaa-naia-usports",
+  image: ogImages.home,
+})
 
 const organizations = [
   { name: "NCAA", logo: "/images/ncaa-logo-png-seeklogo-221081.png" },

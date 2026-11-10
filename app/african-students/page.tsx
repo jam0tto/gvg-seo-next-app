@@ -1,15 +1,16 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, MapPin, BadgeDollarSign } from "lucide-react"
 import { AfricanInquiryForm } from "./inquiry-form"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "African Students | Study in the UK | Guimond Vukovic Group",
-  description:
-    "Free consulting for African student athletes from Nigeria, Kenya, and Zambia. UK university scholarships of 20–40% off tuition — apply now.",
+  description: "Free consulting for African student athletes from Nigeria, Kenya, and Zambia. UK university scholarships of 20–40% off tuition — apply now.",
+  path: "/african-students",
+  image: ogImages.parliament,
   keywords: [
     "African students UK",
     "study abroad Africa",
@@ -18,13 +19,7 @@ export const metadata: Metadata = {
     "Zambia UK scholarship",
     "African athlete scholarship",
   ],
-  alternates: { canonical: "/african-students" },
-  openGraph: {
-    title: "African Students | Study in the UK | Guimond Vukovic Group",
-    description:
-      "Free consulting for African student athletes from Nigeria, Kenya, and Zambia. Scholarship opportunities of 20–40% off tuition at UK universities.",
-  },
-}
+})
 
 const countryLinks = [
   { name: "Nigeria", href: "/countries/nigeria", thumbnail: "/images/nigeria_thumbnail.jpg" },

@@ -1,14 +1,14 @@
-import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { AthleteContactForm } from "@/components/athlete-contact-form"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact Us | Guimond Vukovic Group",
-  description:
-    "Get in touch with the Guimond Vukovic Group. Free consulting for NCAA and NAIA athletes looking to earn a Master's degree and play sports in the UK.",
-  alternates: { canonical: "/contact" },
-}
+  description: "Get in touch with the Guimond Vukovic Group. Free consulting for NCAA and NAIA athletes looking to earn a Master's degree and play sports in the UK.",
+  path: "/contact",
+  image: ogImages.parliament,
+})
 
 export default function ContactPage() {
   return (

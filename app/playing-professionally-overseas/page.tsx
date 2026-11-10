@@ -1,9 +1,9 @@
-import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { Globe, GraduationCap, Handshake } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
 const title = "Playing Professionally Overseas | Guimond Vukovic Group"
 const description =
@@ -11,20 +11,12 @@ const description =
 const heroImage = "/images/london_bridge_hero.png"
 const heroAlt = "Tower Bridge and London skyline"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title,
   description,
-  alternates: { canonical: "/playing-professionally-overseas" },
-  openGraph: {
-    type: "website",
-    url: "/playing-professionally-overseas",
-    siteName: "Guimond Vukovic Group",
-    title,
-    description,
-    images: [{ url: heroImage, width: 1000, height: 667, alt: heroAlt }],
-  },
-  twitter: { card: "summary_large_image", title, description, images: [heroImage] },
-}
+  path: "/playing-professionally-overseas",
+  image: ogImages.london,
+})
 
 const stats = [
   { value: "50+", label: "Professional Contracts Signed" },

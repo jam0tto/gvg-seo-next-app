@@ -1,16 +1,16 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, Plane, CheckCircle, ArrowRight, PoundSterling } from "lucide-react"
 import { PlayOverseasForm } from "@/components/play-overseas-form"
 import { PageHero } from "@/components/page-hero"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Play Overseas Information | Guimond Vukovic Group",
-  description:
-    "Learn how NCAA and NAIA athletes can earn a Master's degree while playing sports in the UK. Cost breakdowns, founder bios, and how to get started.",
-  alternates: { canonical: "/play-overseas-information" },
+  description: "Learn how NCAA and NAIA athletes can earn a Master's degree while playing sports in the UK. Cost breakdowns, founder bios, and how to get started.",
+  path: "/play-overseas-information",
+  image: ogImages.london,
   keywords: [
     "play overseas",
     "NCAA UK masters",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "UK masters cost",
     "student athlete UK scholarship",
   ],
-}
+})
 
 export default function PlayOverseasInformationPage() {
   return (

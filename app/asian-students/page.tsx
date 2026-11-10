@@ -1,15 +1,16 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, MapPin, BadgeDollarSign } from "lucide-react"
 import { AsianInquiryForm } from "./inquiry-form"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Asian Students | Study in the UK | Guimond Vukovic Group",
-  description:
-    "Free consulting for student athletes from India, Pakistan, Nepal, and across Asia. Study in the UK with scholarship opportunities of 20–40% off tuition.",
+  description: "Free consulting for student athletes from India, Pakistan, Nepal, and across Asia. Study in the UK with scholarship opportunities of 20–40% off tuition.",
+  path: "/asian-students",
+  image: ogImages.london,
   keywords: [
     "Indian students UK",
     "Pakistan students UK",
@@ -17,13 +18,7 @@ export const metadata: Metadata = {
     "Asian students scholarship UK",
     "study abroad Asia",
   ],
-  alternates: { canonical: "/asian-students" },
-  openGraph: {
-    title: "Asian Students | Study in the UK | Guimond Vukovic Group",
-    description:
-      "Free consulting for student athletes from India, Pakistan, Nepal, and across Asia. Study in the UK with scholarship opportunities of 20–40% off tuition.",
-  },
-}
+})
 
 const countryLinks = [
   { name: "India", href: "/countries/india", thumbnail: "/images/india_thumbnail.jpg" },

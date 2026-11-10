@@ -1,14 +1,15 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, Trophy, Plane, CheckCircle, ArrowRight } from "lucide-react"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Guimond Vukovic Group | Play Overseas & Earn Your Masters",
-  description:
-    "Free consulting for NCAA, NAIA, and club athletes to play sports in the UK while earning a Master's degree. 60+ athletes placed, 100% free.",
+  description: "Free consulting for NCAA, NAIA, and club athletes to play sports in the UK while earning a Master's degree. 60+ athletes placed, 100% free.",
+  path: "/",
+  image: ogImages.home,
   keywords: [
     "play overseas",
     "NCAA athletes UK",
@@ -17,13 +18,7 @@ export const metadata: Metadata = {
     "NAIA overseas",
     "play sports UK",
   ],
-  alternates: { canonical: "/" },
-  openGraph: {
-    title: "Guimond Vukovic Group | Play Overseas & Earn Your Masters",
-    description:
-      "Free consulting for NCAA, NAIA, and club athletes to earn Master's degrees while playing overseas in the UK.",
-  },
-}
+})
 
 const universityPartners = [
   { name: "University of Essex", logo: "/images/essexpartner_1.png" },

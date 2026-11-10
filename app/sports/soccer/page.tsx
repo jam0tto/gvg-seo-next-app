@@ -1,16 +1,13 @@
-import { Metadata } from "next"
 import { SportPageLayout } from "@/components/sport-page-layout"
+import { pageMetadata, sportOgImage } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Play College Soccer Abroad | Scholarship Athlete UK",
   description: "Play college soccer while earning your Masters or PhD at a UK university. GVG places scholarship athletes at British universities — free.",
+  path: "/sports/soccer",
+  image: sportOgImage("soccer", "Soccer"),
   keywords: ["play college soccer abroad", "soccer abroad", "play soccer overseas", "UK football scholarship", "scholarship athlete UK", "study abroad soccer", "overseas soccer recruiting", "moved to london football", "play college soccer and still study abroad"],
-  alternates: { canonical: "/sports/soccer" },
-  openGraph: {
-    title: "Play College Soccer Abroad | Scholarship Athlete UK",
-    description: "Play college soccer and still study abroad while earning your Masters or PhD in the UK.",
-  },
-}
+})
 
 const sportData = {
   sport: "Soccer",

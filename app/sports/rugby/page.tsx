@@ -1,16 +1,13 @@
-import { Metadata } from "next"
 import { SportPageLayout } from "@/components/sport-page-layout"
+import { pageMetadata, sportOgImage } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Play Rugby Abroad | Scholarship Athlete Program UK",
   description: "Play rugby overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British rugby programs — free.",
+  path: "/sports/rugby",
+  image: sportOgImage("rugby", "Rugby"),
   keywords: ["rugby abroad", "play rugby overseas", "UK rugby scholarship", "scholarship athlete UK", "study abroad rugby", "overseas rugby recruiting", "moved to london rugby", "play college rugby abroad"],
-  alternates: { canonical: "/sports/rugby" },
-  openGraph: {
-    title: "Play Rugby Abroad | Scholarship Athlete Program",
-    description: "Play rugby overseas while earning your Masters or PhD in the UK.",
-  },
-}
+})
 
 const sportData = {
   sport: "Rugby",

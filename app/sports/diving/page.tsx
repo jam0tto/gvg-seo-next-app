@@ -1,16 +1,13 @@
-import { Metadata } from "next"
 import { SportPageLayout } from "@/components/sport-page-layout"
+import { pageMetadata, sportOgImage } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Dive Abroad | Scholarship Athlete Program UK",
-  description: "Compete in diving overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes seeking to train at British universities.",
+  description: "Compete in diving overseas while earning your Masters or PhD in the UK. Expert recruiting for scholarship athletes training at British universities.",
+  path: "/sports/diving",
+  image: sportOgImage("diving", "Diving"),
   keywords: ["diving abroad", "dive overseas", "UK diving scholarship", "scholarship athlete UK", "study abroad diving", "overseas diving recruiting", "moved to london diving"],
-  alternates: { canonical: "/sports/diving" },
-  openGraph: {
-    title: "Dive Abroad | Scholarship Athlete Program",
-    description: "Compete in diving overseas while earning your Masters or PhD in the UK.",
-  },
-}
+})
 
 const sportData = {
   sport: "Diving",

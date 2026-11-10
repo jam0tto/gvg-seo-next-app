@@ -1,14 +1,14 @@
-import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { Quote } from "lucide-react"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "News & Reviews | Guimond Vukovic Group",
-  description:
-    "GVG annual player reviews, athlete testimonials, and the latest news on student athlete opportunities in the UK.",
-  alternates: { canonical: "/news" },
-}
+  description: "GVG annual player reviews, athlete testimonials, and the latest news on student athlete opportunities in the UK.",
+  path: "/news",
+  image: ogImages.london,
+})
 
 const playerReviews = [
   {

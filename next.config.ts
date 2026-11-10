@@ -9,12 +9,14 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.googleadservices.com",
+      // Google tag (GA4 + Google Ads): wildcard hosts per Google's CSP guidance, so regional
+      // endpoints like region1.google-analytics.com aren't silently blocked.
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com",
       "img-src 'self' data: https:",
       "style-src 'self' 'unsafe-inline'",
       "font-src 'self'",
-      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.googleadservices.com",
-      "frame-src https://www.googletagmanager.com",
+      "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com https://www.googleadservices.com https://pagead2.googlesyndication.com",
+      "frame-src https://*.googletagmanager.com https://td.doubleclick.net",
       "object-src 'none'",
     ].join("; "),
   },

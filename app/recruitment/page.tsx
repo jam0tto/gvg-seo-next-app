@@ -1,12 +1,13 @@
-import type { Metadata } from "next"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, FileText, UserCheck } from "lucide-react"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Recruit Student Athletes | Guimond Vukovic Group",
-  description:
-    "Partner with GVG to recruit vetted NCAA and NAIA athletes for your UK university. Full profiles, video highlights, and academic records provided.",
+  description: "Partner with GVG to recruit vetted NCAA and NAIA athletes for your UK university. Full profiles, video highlights, and academic records provided.",
+  path: "/recruitment",
+  image: ogImages.parliament,
   keywords: [
     "recruit student athletes UK",
     "NCAA athletes UK universities",
@@ -14,13 +15,7 @@ export const metadata: Metadata = {
     "university athlete recruitment",
     "student athlete placement UK",
   ],
-  alternates: { canonical: "/recruitment" },
-  openGraph: {
-    title: "Recruit Student Athletes | Guimond Vukovic Group",
-    description:
-      "Partner with Guimond Vukovic Group to recruit vetted NCAA and NAIA student athletes from the USA and Canada for your UK university.",
-  },
-}
+})
 
 export default function RecruitmentPage() {
   return (

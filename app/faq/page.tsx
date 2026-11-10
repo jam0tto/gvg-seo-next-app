@@ -1,13 +1,13 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Frequently Asked Questions | Guimond Vukovic Group",
-  description:
-    "Frequently asked questions about studying and playing sports abroad with the Guimond Vukovic Group. Learn about costs, eligibility, visas, and more.",
-  alternates: { canonical: "/faq" },
-}
+  description: "Frequently asked questions about studying and playing sports abroad with the Guimond Vukovic Group. Learn about costs, eligibility, visas, and more.",
+  path: "/faq",
+  image: ogImages.london,
+})
 
 const faqs = [
   {

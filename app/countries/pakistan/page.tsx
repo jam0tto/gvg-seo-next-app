@@ -1,16 +1,13 @@
-import { Metadata } from "next"
 import { CountryPageLayout } from "@/components/country-page-layout"
+import { pageMetadata, countryOgImage } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Study Abroad from Pakistan | Guimond Vukovic Group",
-  description: "Expert guidance for Pakistani students seeking education in the UK and beyond. Free university application support, visa guidance, and scholarship advice from GVG.",
+  description: "Expert guidance for Pakistani students seeking education in the UK and beyond. Free application support, visa guidance, and scholarship advice from GVG.",
+  path: "/countries/pakistan",
+  image: countryOgImage("pakistan", "Pakistan"),
   keywords: ["study abroad Pakistan", "Pakistani students UK", "study in Australia from Pakistan", "UCAS application Pakistan", "Pakistani student visa", "scholarship for Pakistani students", "international education Pakistan", "study in Canada from Pakistan"],
-  alternates: { canonical: "/countries/pakistan" },
-  openGraph: {
-    title: "Study Abroad from Pakistan | Guimond Vukovic Group",
-    description: "Expert guidance for Pakistani students seeking international education in the UK, Australia, Canada, and beyond.",
-  },
-}
+})
 
 const pakistanData = {
   country: "Pakistan",

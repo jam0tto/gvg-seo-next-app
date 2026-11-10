@@ -1,16 +1,13 @@
-import { Metadata } from "next"
 import { SportPageLayout } from "@/components/sport-page-layout"
+import { pageMetadata, sportOgImage } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Train Judo Abroad | Scholarship Athlete Program UK",
   description: "Train judo overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British programs — free.",
+  path: "/sports/judo",
+  image: sportOgImage("judo", "Judo"),
   keywords: ["judo abroad", "martial arts overseas", "UK judo scholarship", "scholarship athlete UK", "study abroad judo", "overseas judo recruiting", "moved to london judo"],
-  alternates: { canonical: "/sports/judo" },
-  openGraph: {
-    title: "Train Judo Abroad | Scholarship Athlete Program",
-    description: "Train judo overseas while earning your Masters or PhD in the UK.",
-  },
-}
+})
 
 const sportData = {
   sport: "Judo",

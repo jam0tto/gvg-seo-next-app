@@ -1,16 +1,13 @@
-import { Metadata } from "next"
 import { SportPageLayout } from "@/components/sport-page-layout"
+import { pageMetadata, sportOgImage } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Play Cross Country Abroad | Scholarship Athlete Program UK",
   description: "Run cross country overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British programs — free.",
+  path: "/sports/cross-country",
+  image: sportOgImage("cross-country", "Cross Country"),
   keywords: ["cross country abroad", "run overseas", "UK running scholarship", "scholarship athlete UK", "study abroad running", "overseas cross country recruiting", "distance running abroad", "moved to london runner"],
-  alternates: { canonical: "/sports/cross-country" },
-  openGraph: {
-    title: "Play Cross Country Abroad | Scholarship Athlete Program",
-    description: "Run cross country overseas while earning your Masters or PhD in the UK.",
-  },
-}
+})
 
 const sportData = {
   sport: "Cross Country",

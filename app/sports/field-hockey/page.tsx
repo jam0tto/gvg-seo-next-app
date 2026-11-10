@@ -1,16 +1,13 @@
-import { Metadata } from "next"
 import { SportPageLayout } from "@/components/sport-page-layout"
+import { pageMetadata, sportOgImage } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Play Field Hockey Abroad | Scholarship Athlete Program UK",
   description: "Play field hockey overseas and earn your Masters or PhD at a UK university. GVG places scholarship athletes at British programs — free.",
+  path: "/sports/field-hockey",
+  image: sportOgImage("field-hockey", "Field Hockey"),
   keywords: ["field hockey abroad", "play hockey overseas", "UK field hockey scholarship", "scholarship athlete UK", "study abroad field hockey", "overseas hockey recruiting", "moved to london hockey"],
-  alternates: { canonical: "/sports/field-hockey" },
-  openGraph: {
-    title: "Play Field Hockey Abroad | Scholarship Athlete Program",
-    description: "Play field hockey overseas while earning your Masters or PhD in the UK.",
-  },
-}
+})
 
 const sportData = {
   sport: "Field Hockey",

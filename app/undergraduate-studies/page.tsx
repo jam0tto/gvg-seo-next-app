@@ -1,7 +1,7 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
+import { pageMetadata, ogImages } from "@/lib/seo"
 import {
   BookOpen,
   Search,
@@ -16,10 +16,11 @@ import {
   GraduationCap,
 } from "lucide-react"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Undergraduate Studies in the UK | Guimond Vukovic Group",
-  description:
-    "Free UCAS support for international students. Personal statement coaching, university selection, and visa assistance for UK undergraduate applications.",
+  description: "Free UCAS support for international students. Personal statement coaching, university selection, and visa assistance for UK undergraduate applications.",
+  path: "/undergraduate-studies",
+  image: ogImages.parliament,
   keywords: [
     "UCAS application support",
     "UK undergraduate international students",
@@ -27,13 +28,7 @@ export const metadata: Metadata = {
     "UCAS personal statement help",
     "UK university application",
   ],
-  alternates: { canonical: "/undergraduate-studies" },
-  openGraph: {
-    title: "Undergraduate Studies in the UK | Guimond Vukovic Group",
-    description:
-      "Expert UCAS application support for international students applying to UK undergraduate programs. Free consulting, personal statement coaching, and visa assistance from GVG.",
-  },
-}
+})
 
 const services = [
   {

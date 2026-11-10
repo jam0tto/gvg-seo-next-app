@@ -1,8 +1,8 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import { Briefcase, CheckCircle, GraduationCap, PoundSterling } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import { Card, CardContent } from "@/components/ui/card"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
 const title = "Finance and Financial Aid | Guimond Vukovic Group"
 const description =
@@ -10,20 +10,12 @@ const description =
 const heroImage = "/images/parliament_hero.png"
 const heroAlt = "Houses of Parliament and Westminster, London"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title,
   description,
-  alternates: { canonical: "/finance-and-financial-aid" },
-  openGraph: {
-    type: "website",
-    url: "/finance-and-financial-aid",
-    siteName: "Guimond Vukovic Group",
-    title,
-    description,
-    images: [{ url: heroImage, width: 1366, height: 768, alt: heroAlt }],
-  },
-  twitter: { card: "summary_large_image", title, description, images: [heroImage] },
-}
+  path: "/finance-and-financial-aid",
+  image: ogImages.parliament,
+})
 
 const costs = [
   { item: "Master's tuition", amount: "£10,500 – £22,500" },

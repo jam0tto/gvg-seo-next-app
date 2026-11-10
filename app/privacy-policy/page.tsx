@@ -1,12 +1,12 @@
-import type { Metadata } from "next"
 import { Separator } from "@/components/ui/separator"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Privacy Policy | Guimond Vukovic Group",
-  description:
-    "Privacy policy for the Guimond Vukovic Group. Learn how we collect, use, and protect your personal data.",
-  alternates: { canonical: "/privacy-policy" },
-}
+  description: "Privacy policy for the Guimond Vukovic Group. Learn how we collect, use, and protect your personal data.",
+  path: "/privacy-policy",
+  image: ogImages.home,
+})
 
 export default function PrivacyPolicyPage() {
   return (

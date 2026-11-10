@@ -1,16 +1,13 @@
-import { Metadata } from "next"
 import { CountryPageLayout } from "@/components/country-page-layout"
+import { pageMetadata, countryOgImage } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Study in the UK from Kenya | Guimond Vukovic Group",
-  description: "Expert guidance for Kenyan students pursuing education in the UK and Canada. Free university application support, visa guidance, and personalized counseling from GVG.",
+  description: "Expert guidance for Kenyan students pursuing education in the UK and Canada. Free application support, visa guidance, and personalized counseling from GVG.",
+  path: "/countries/kenya",
+  image: countryOgImage("kenya", "Kenya"),
   keywords: ["study abroad Kenya", "Kenyan students UK", "study in USA from Kenya", "UCAS application Kenya", "Kenyan student visa", "scholarship for Kenyan students", "international education Kenya"],
-  alternates: { canonical: "/countries/kenya" },
-  openGraph: {
-    title: "Study Abroad from Kenya | Guimond Vukovic Group",
-    description: "Expert guidance for Kenyan students pursuing international education in the UK, USA, Canada, and Australia.",
-  },
-}
+})
 
 const kenyaData = {
   country: "Kenya",

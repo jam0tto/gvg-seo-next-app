@@ -1,14 +1,14 @@
-import type { Metadata } from "next"
 import Link from "next/link"
 import { PageHero } from "@/components/page-hero"
 import { ChevronRight } from "lucide-react"
+import { pageMetadata, ogImages } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Scholarship Athlete Programs | Play Your Sport Abroad | GVG",
-  description:
-    "Play your sport abroad while earning your Masters or PhD at a UK university. GVG's free recruiting connects scholarship athletes with world-class British programs.",
-  alternates: { canonical: "/sports" },
-}
+  description: "Play your sport abroad while earning your Masters or PhD at a UK university. GVG's free recruiting connects athletes with world-class British programs.",
+  path: "/sports",
+  image: ogImages.london,
+})
 
 const sports = [
   { name: "Basketball", slug: "basketball" },

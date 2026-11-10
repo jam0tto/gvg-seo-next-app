@@ -1,16 +1,13 @@
-import { Metadata } from "next"
 import { CountryPageLayout } from "@/components/country-page-layout"
+import { pageMetadata, countryOgImage } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Study in the UK from Nepal | Guimond Vukovic Group",
-  description: "Expert guidance for Nepali students pursuing education in the UK and beyond. Free university application support, visa guidance, and personalized counseling from GVG.",
+  description: "Expert guidance for Nepali students pursuing education in the UK and beyond. Free application support, visa guidance, and personalized counseling from GVG.",
+  path: "/countries/nepal",
+  image: countryOgImage("nepal", "Nepal"),
   keywords: ["study abroad Nepal", "Nepali students UK", "study in Australia from Nepal", "IELTS preparation Nepal", "Nepali student visa", "scholarship for Nepali students", "international education Nepal", "Kathmandu study abroad"],
-  alternates: { canonical: "/countries/nepal" },
-  openGraph: {
-    title: "Study Abroad from Nepal | Guimond Vukovic Group",
-    description: "Expert guidance for Nepali students seeking international education in the UK, Australia, Canada, and beyond.",
-  },
-}
+})
 
 const nepalData = {
   country: "Nepal",
