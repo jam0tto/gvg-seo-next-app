@@ -1,46 +1,68 @@
-import { MetadataRoute } from "next"
+import type { MetadataRoute } from "next"
 
 const BASE_URL = "https://www.guimondvukovicgroup.com"
 
-const sports = [
-  "basketball", "volleyball", "soccer", "american-football", "rugby",
-  "lacrosse", "water-polo", "field-hockey", "ice-hockey", "netball",
-  "beach-volleyball", "tennis", "swimming", "diving", "track-and-field",
-  "cross-country", "golf", "squash", "badminton", "martial-arts",
-  "judo", "taekwondo", "cheer", "ultimate",
-]
+// ⚠️ THESE DATES ARE SET BY HAND. They do not update automatically.
+// When a page's content changes, set its date below to that day (YYYY-MM-DD)
+// in the same change. Read "SITEMAP DATES" in AGENTS.md for the rules.
 
-const countries = ["nigeria", "kenya", "zambia", "india", "nepal", "pakistan"]
+// The day the current content went live. Set this to the cutover date at launch.
+const LAUNCH_DATE = "2026-11-09"
+
+// Every indexable page, mapped to the date its content last meaningfully changed.
+// Adding a page? Add it here too.
+const pages: Record<string, string> = {
+  "/": LAUNCH_DATE,
+  "/play-overseas-information": LAUNCH_DATE,
+  "/finance-and-financial-aid": LAUNCH_DATE,
+  "/ncaa-naia-usports": LAUNCH_DATE,
+  "/playing-professionally-overseas": LAUNCH_DATE,
+  "/african-students": LAUNCH_DATE,
+  "/asian-students": LAUNCH_DATE,
+  "/sports": LAUNCH_DATE,
+  "/recruitment": LAUNCH_DATE,
+  "/undergraduate-studies": LAUNCH_DATE,
+  "/contact": LAUNCH_DATE,
+  "/faq": LAUNCH_DATE,
+  "/news": LAUNCH_DATE,
+  "/privacy-policy": LAUNCH_DATE,
+
+  "/countries/nigeria": LAUNCH_DATE,
+  "/countries/kenya": LAUNCH_DATE,
+  "/countries/zambia": LAUNCH_DATE,
+  "/countries/india": LAUNCH_DATE,
+  "/countries/nepal": LAUNCH_DATE,
+  "/countries/pakistan": LAUNCH_DATE,
+
+  "/sports/basketball": LAUNCH_DATE,
+  "/sports/volleyball": LAUNCH_DATE,
+  "/sports/soccer": LAUNCH_DATE,
+  "/sports/american-football": LAUNCH_DATE,
+  "/sports/rugby": LAUNCH_DATE,
+  "/sports/lacrosse": LAUNCH_DATE,
+  "/sports/water-polo": LAUNCH_DATE,
+  "/sports/field-hockey": LAUNCH_DATE,
+  "/sports/ice-hockey": LAUNCH_DATE,
+  "/sports/netball": LAUNCH_DATE,
+  "/sports/beach-volleyball": LAUNCH_DATE,
+  "/sports/tennis": LAUNCH_DATE,
+  "/sports/swimming": LAUNCH_DATE,
+  "/sports/diving": LAUNCH_DATE,
+  "/sports/track-and-field": LAUNCH_DATE,
+  "/sports/cross-country": LAUNCH_DATE,
+  "/sports/golf": LAUNCH_DATE,
+  "/sports/squash": LAUNCH_DATE,
+  "/sports/badminton": LAUNCH_DATE,
+  "/sports/martial-arts": LAUNCH_DATE,
+  "/sports/judo": LAUNCH_DATE,
+  "/sports/taekwondo": LAUNCH_DATE,
+  "/sports/cheer": LAUNCH_DATE,
+  "/sports/ultimate": LAUNCH_DATE,
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
-
-  const staticRoutes: MetadataRoute.Sitemap = [
-    { url: BASE_URL, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${BASE_URL}/play-overseas-information`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE_URL}/african-students`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/asian-students`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/recruitment`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/undergraduate-studies`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE_URL}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE_URL}/news`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
-    { url: `${BASE_URL}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-  ]
-
-  const countryRoutes: MetadataRoute.Sitemap = countries.map((country) => ({
-    url: `${BASE_URL}/countries/${country}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.7,
+  return Object.entries(pages).map(([path, lastModified]) => ({
+    url: path === "/" ? BASE_URL : `${BASE_URL}${path}`,
+    lastModified,
   }))
-
-  const sportRoutes: MetadataRoute.Sitemap = sports.map((sport) => ({
-    url: `${BASE_URL}/sports/${sport}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }))
-
-  return [...staticRoutes, ...countryRoutes, ...sportRoutes]
 }

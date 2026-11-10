@@ -34,6 +34,9 @@ const nextConfig: NextConfig = {
       { source: "/privacy-policy.html", destination: "/privacy-policy", permanent: true },
       { source: "/play-overseas-information.html", destination: "/play-overseas-information", permanent: true },
       { source: "/african-students.html", destination: "/african-students", permanent: true },
+      { source: "/finance-and-financial-aid.html", destination: "/finance-and-financial-aid", permanent: true },
+      { source: "/ncaa-naia-usports.html", destination: "/ncaa-naia-usports", permanent: true },
+      { source: "/playing-professionally-overseas.html", destination: "/playing-professionally-overseas", permanent: true },
       // Asian students — URL simplified; handle both bare and .html variants
       { source: "/indian-pakistani-and-se-asian-students", destination: "/asian-students", permanent: true },
       { source: "/indian-pakistani-and-se-asian-students.html", destination: "/asian-students", permanent: true },
