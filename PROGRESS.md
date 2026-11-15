@@ -6,7 +6,7 @@ This file tracks what has been built and what remains, with enough context to co
 
 ## Source Site
 
-**Weebly:** https://www.guimondvukovicgroup.com  
+**Status:** The Next.js app is **live** in production at https://www.guimondvukovicgroup.com (Vercel). The original Weebly site no longer serves the domain; Weebly references below describe the migration source.  
 **Signup portal (external, keep as external link):** https://recruit.guimondvukovicgroup.com
 
 ---
@@ -32,6 +32,7 @@ This file tracks what has been built and what remains, with enough context to co
 - **Athlete contact form:** `components/athlete-contact-form.tsx` — full sport-focused form (Graduation Year, Sport, Major+GPA, Timezone, Phone, Comment) used by `/contact` and `/play-overseas-information`
 - **Hub inquiry forms:** `app/african-students/inquiry-form.tsx` and `app/asian-students/inquiry-form.tsx` — simple "use client" forms (Name, Email, Country, Message) co-located with their pages
 - **API route:** `app/api/contact/route.ts` — handles all form submissions via Resend SDK
+- **Spam protection:** `components/spam-guard.tsx` — `<SpamGuard />` goes inside every form, before the submit button. Renders a hidden honeypot field (`website`) and the Cloudflare Turnstile widget; call `resetSpamGuard()` after a failed submit (tokens are single-use). Any new form posting to `/api/contact` **must** include it or the API will reject it.
 - **Internal routing:** All nav links use Next.js `Link`. Only external link in nav is "Sign Up Free" → `https://recruit.guimondvukovicgroup.com`
 - **Hero images:** All present — `public/images/sports/*.jpg` (24 files) and `public/images/hero-{country}.jpg` (6 files)
 
@@ -101,6 +102,15 @@ All forms POST to `app/api/contact/route.ts` via the Resend SDK. API key is in `
 - All other forms (athlete, african-hub, asian-hub) → `derek.guimond@guimondvukovicgroup.com`
 
 **From:** `noreply@guimondvukovicgroup.com` (domain already verified in Resend on the account that owns this key)
+
+**Spam protection (added 2026-11-15, after contact form spam):**
+- **Honeypot:** hidden `website` field. If filled, the API returns `success` but sends nothing.
+- **Cloudflare Turnstile:** the API verifies the `cf-turnstile-response` token with Cloudflare's siteverify before sending. Missing or invalid token → 403 → the form shows "Something went wrong".
+- **User input is HTML-escaped** before it goes into the notification emails.
+- **CSP** in `next.config.ts` allows `https://challenges.cloudflare.com` in `script-src` and `frame-src`.
+- **Env vars (Vercel, Production):** `NEXT_PUBLIC_TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY`, from the Turnstile widget in the Cloudflare dashboard. The site key is inlined at **build** time, so changing it requires a redeploy. If the secret is missing, **every submission is rejected** (fails closed).
+- **Local dev:** `.env.local` uses Cloudflare's always-pass test keys: site `1x00000000000000000000AA`, secret `1x0000000000000000000000000000000AA`.
+- **Troubleshooting:** if the widget doesn't appear on the live site, check the env var name for typos (this happened at rollout) and redeploy. Vercel function logs show "TURNSTILE_SECRET_KEY is not set" or "Turnstile verification failed" with Cloudflare error codes.
 
 ---
 
@@ -189,6 +199,8 @@ All 3 form types tested end-to-end and confirmed working:
 - **Country form** (each `/countries/*` page) — `formType: "country"` → routes to country rep based on hidden `country` field.
 
 Note: hub inquiry forms (`/african-students`, `/asian-students`) were not explicitly tested but share the same API route and pattern.
+
+2026-11-15: after the Turnstile rollout, a live submission on `/contact` was confirmed working in production.
 
 ---
 
