@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { SpamGuard, resetSpamGuard } from "@/components/spam-guard"
 import { Label } from "@/components/ui/label"
 
 export function AsianInquiryForm() {
@@ -26,11 +27,12 @@ export function AsianInquiryForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, formType: "asian-hub" }),
+        body: JSON.stringify({ ...Object.fromEntries(new FormData(e.currentTarget)), formType: "asian-hub" }),
       })
       if (!res.ok) throw new Error()
       setSubmitted(true)
     } catch {
+      resetSpamGuard()
       alert("Something went wrong. Please try again.")
     }
   }
@@ -103,6 +105,8 @@ export function AsianInquiryForm() {
           className="min-h-32"
         />
       </div>
+      <SpamGuard />
+
       <Button type="submit" size="lg" className="w-full sm:w-auto px-8">
         Send Enquiry
       </Button>

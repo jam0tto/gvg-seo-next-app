@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { SpamGuard, resetSpamGuard } from "@/components/spam-guard"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
@@ -30,6 +31,7 @@ export function ContactForm({ country }: ContactFormProps) {
       if (!res.ok) throw new Error()
       setSubmitted(true)
     } catch {
+      resetSpamGuard()
       alert("Something went wrong. Please try again.")
     } finally {
       setIsSubmitting(false)
@@ -123,6 +125,8 @@ export function ContactForm({ country }: ContactFormProps) {
 
         {country && <input type="hidden" name="country" value={country} />}
       </FieldGroup>
+
+      <SpamGuard />
 
       <Button type="submit" className="w-full" disabled={isSubmitting}>
         {isSubmitting ? "Sending..." : "Submit Inquiry"}

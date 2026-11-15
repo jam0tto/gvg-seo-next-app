@@ -15,9 +15,48 @@ const COUNTRY_RECIPIENTS: Record<string, string> = {
   nepal: "Riward Kc <riwardkc@guimondvukovicgroup.com>",
 }
 
+// Must match HONEYPOT_FIELD in components/spam-guard.tsx
+const HONEYPOT_FIELD = "website"
+const TURNSTILE_FIELD = "cf-turnstile-response"
+
+async function verifyTurnstile(token: string | undefined, ip: string | null) {
+  const secret = process.env.TURNSTILE_SECRET_KEY
+  if (!secret) {
+    console.error("TURNSTILE_SECRET_KEY is not set; rejecting form submission")
+    return false
+  }
+  if (!token) return false
+
+  const form = new URLSearchParams({ secret, response: token })
+  if (ip) form.set("remoteip", ip)
+
+  try {
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: form,
+    })
+    const data = (await res.json()) as { success: boolean; "error-codes"?: string[] }
+    if (!data.success) console.warn("Turnstile verification failed:", data["error-codes"])
+    return data.success
+  } catch (err) {
+    console.error("Turnstile verification error:", err)
+    return false
+  }
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+}
+
 function row(label: string, value: string | undefined) {
   if (!value) return ""
-  return `<tr><td style="padding:4px 12px 4px 0;font-weight:600;white-space:nowrap;vertical-align:top">${label}</td><td style="padding:4px 0">${value}</td></tr>`
+  const safe = escapeHtml(String(value)).replace(/\n/g, "<br>")
+  return `<tr><td style="padding:4px 12px 4px 0;font-weight:600;white-space:nowrap;vertical-align:top">${label}</td><td style="padding:4px 0">${safe}</td></tr>`
 }
 
 function buildHtml(subject: string, fields: Record<string, string | undefined>) {
@@ -25,7 +64,7 @@ function buildHtml(subject: string, fields: Record<string, string | undefined>) 
     .map(([label, value]) => row(label, value))
     .join("")
   return `<!DOCTYPE html><html><body style="font-family:sans-serif;color:#111;max-width:600px">
-<h2 style="margin-bottom:16px">${subject}</h2>
+<h2 style="margin-bottom:16px">${escapeHtml(subject)}</h2>
 <table style="border-collapse:collapse">${rows}</table>
 </body></html>`
 }
@@ -38,7 +77,26 @@ export async function POST(request: NextRequest) {
     return Response.json({ error: "Invalid request body" }, { status: 400 })
   }
 
-  const { formType, country, ...fields } = body
+  const {
+    formType,
+    country,
+    [HONEYPOT_FIELD]: honeypot,
+    [TURNSTILE_FIELD]: turnstileToken,
+    ...fields
+  } = body
+
+  // Honeypot filled in: a bot. Pretend it worked so it doesn't retry or adapt.
+  if (honeypot) {
+    return Response.json({ success: true })
+  }
+
+  const ip =
+    request.headers.get("cf-connecting-ip") ??
+    request.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
+    null
+  if (!(await verifyTurnstile(turnstileToken, ip))) {
+    return Response.json({ error: "Verification failed. Please try again." }, { status: 403 })
+  }
 
   let to: string
   let subject: string

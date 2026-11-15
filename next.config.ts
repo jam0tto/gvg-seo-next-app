@@ -11,12 +11,12 @@ const securityHeaders = [
       "default-src 'self'",
       // Google tag (GA4 + Google Ads): wildcard hosts per Google's CSP guidance, so regional
       // endpoints like region1.google-analytics.com aren't silently blocked.
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://challenges.cloudflare.com",
       "img-src 'self' data: https:",
       "style-src 'self' 'unsafe-inline'",
       "font-src 'self'",
       "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com https://www.googleadservices.com https://pagead2.googlesyndication.com",
-      "frame-src https://*.googletagmanager.com https://td.doubleclick.net",
+      "frame-src https://*.googletagmanager.com https://td.doubleclick.net https://challenges.cloudflare.com",
       "object-src 'none'",
     ].join("; "),
   },

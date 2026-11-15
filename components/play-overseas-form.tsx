@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { SpamGuard, resetSpamGuard } from "@/components/spam-guard"
 import { Input } from "@/components/ui/input"
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 
@@ -99,6 +100,7 @@ export function PlayOverseasForm() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ;(window as any).gtag?.("event", "conversion", { send_to: "AW-17496410069/-FAVCJC49d8bENWP-JZB" })
     } catch {
+      resetSpamGuard()
       alert("Something went wrong. Please try again.")
     } finally {
       setIsSubmitting(false)
@@ -201,6 +203,8 @@ export function PlayOverseasForm() {
           </Field>
         )}
       </FieldGroup>
+
+      <SpamGuard />
 
       <Button type="submit" className="w-full" disabled={isSubmitting}>
         {isSubmitting ? "Sending..." : "Submit"}
