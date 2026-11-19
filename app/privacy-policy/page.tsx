@@ -119,10 +119,10 @@ export default function PrivacyPolicyPage() {
             You can opt out of marketing communications from Guimond Vukovic Group at any time by clicking the
             unsubscribe link in any marketing email, or by contacting us directly at{" "}
             <a
-              href="mailto:info@guimondvukovicgroup.com"
+              href="mailto:administrator@guimondvukovicgroup.com"
               className="text-accent underline underline-offset-4 hover:text-accent/80"
             >
-              info@guimondvukovicgroup.com
+              administrator@guimondvukovicgroup.com
             </a>
             .
           </p>
@@ -135,10 +135,10 @@ export default function PrivacyPolicyPage() {
           <p className="mt-4 leading-relaxed text-muted-foreground">
             For any privacy-related queries, concerns, or to exercise your rights, please contact us at{" "}
             <a
-              href="mailto:info@guimondvukovicgroup.com"
+              href="mailto:administrator@guimondvukovicgroup.com"
               className="text-accent underline underline-offset-4 hover:text-accent/80"
             >
-              info@guimondvukovicgroup.com
+              administrator@guimondvukovicgroup.com
             </a>
             .
           </p>
